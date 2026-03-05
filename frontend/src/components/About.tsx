@@ -50,22 +50,22 @@ export const About = memo(() => {
                     >
                         Our Story
                     </p>
-                    <h2 className="headline-1 section-title">Every Flavor Tells a Story</h2>
+                    <h2 className="headline-1 section-title">Where Passion Meets the Plate</h2>
                     <p className="section-text">
-                        Nestled in the heart of Ganeshman Chowk, Dharan, Gurung BBQ stands as the best restaurant in Dharan and a proud local gem serving authentic Nepali-style barbecue with a modern twist. Founded by Dhan Bahadur Gurung, this exceptional restaurant in Dharan brings together the warmth of home-cooked flavors and the thrill of open-fire grilling.
+                        Finding the perfect restaurant in Thamel means looking for more than just a menu; it&apos;s about finding a vibe that resonates. Meraki Cafe, Restro & Bar was born from the Greek concept of Meraki—doing something with soul, creativity, and love. Located at the bustling Narsingh Chowk Marg, we have quickly become a destination for those seeking the best restaurant in Kathmandu for authentic international flavors and a sophisticated atmosphere.
                     </p>
                     <p className="section-text">
-                        Renowned for offering the best BBQ in Dharan, our kitchen crafts every dish with care and tradition, from succulent grilled meats to rich local spices. As the premier destination for BBQ in Dharan, we&apos;ve perfected the art of smoky, savory cuisine that captures the authentic essence of Nepal&apos;s grilling heritage.
+                        While the streets of Thamel offer endless options, Meraki stands out as a premier Turkish restaurant in Kathmandu. Our kitchen is a bridge between cultures, specializing in authentic Turkish dishes that bring the spice markets of Istanbul to your plate.
                     </p>
                     <p className="section-text">
-                        Whether you&apos;re a local or just passing through, Gurung BBQ promises an unforgettable taste of Nepal&apos;s smoky, savory side, establishing itself as more than just a restaurant in Dharan – we&apos;re a culinary experience that defines what the best restaurant in Dharan should be.
+                        From our signature succulent Kebabs and freshly baked Turkish Pide to the rich, honeyed layers of our traditional Baklava, every recipe is prepared with the "Meraki" touch. Whether you are searching for a hearty Turkish breakfast to start your day or a late-night Restro & Bar experience with curated cocktails, we offer a sanctuary away from the city&apos;s hustle.
                     </p>
                     <div className="contact-label">Book Through Call</div>
                     <a
-                        href="tel:+804001234567"
+                        href="tel:+9779806658055"
                         className="body-1 contact-number hover-underline"
                     >
-                        +977-970-3630464
+                        +977 9806658055
                     </a>
 
                 </div>

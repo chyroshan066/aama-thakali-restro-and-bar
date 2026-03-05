@@ -161,23 +161,23 @@ export const Header = memo(() => {
                     <div className="text-center">
                         <p className="headline-1 navbar-title">Visit Us</p>
                         <address className="body-4">
-                            Campus Mode, <br />
-                            Bhadrapur, Nepal
+                            Narsingh Chowk Marg, <br />
+                            Kathmandu, Nepal
                         </address>
-                        <p className="body-4 navbar-text">Open: 9.00 am - 10.00pm</p>
+                        <p className="body-4 navbar-text">Open: 7.00 am - 10.00pm</p>
                         <a
                             href="#contact"
                             className="body-4 sidebar-link"
                         >
-                            gurunghotkitchen123@gmail.com
+                            merakicafe04@gmail.com
                         </a>
                         <div className="separator"></div>
                         <p className="contact-label">Booking Request</p>
                         <a
-                            href="tel:+977-25-570068"
+                            href="tel:+977-9806658055"
                             className="body-1 contact-number hover-underline"
                         >
-                            +977-25-570068
+                            +977 9806658055
                         </a>
                     </div>
                 </nav>

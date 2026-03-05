@@ -32,7 +32,7 @@ export const TopBar = memo(() => (
             <address className="topbar-item">
                 <Details
                     icon_name={"location-outline"}
-                    span_details={"Campus Mode, Bhadrapur, Nepal"}
+                    span_details={"Narsingh Chowk Marg, Kathmandu, Nepal"}
                 />
             </address>
 
@@ -41,17 +41,17 @@ export const TopBar = memo(() => (
             <div className="topbar-item item-2">
                 <Details
                     icon_name={"time-outline"}
-                    span_details={"Daily : 9.00 am to 10.00 pm"}
+                    span_details={"Daily : 7.00 am to 10.00 pm"}
                 />
             </div>
 
             <a
-                href="tel:+9779703630464"
+                href="tel:+9779806658055"
                 className="topbar-item link"
             >
                 <Details
                     icon_name={"call-outline"}
-                    span_details={"+977-9703630464"}
+                    span_details={"+977-9806658055"}
                 />
             </a>
 
@@ -63,7 +63,7 @@ export const TopBar = memo(() => (
             >
                 <Details
                     icon_name={"mail-outline"}
-                    span_details={"hiddenhutrestaurant@gmail.com"}
+                    span_details={"merakicafe04@gmail.com"}
                 />
             </a>
 
