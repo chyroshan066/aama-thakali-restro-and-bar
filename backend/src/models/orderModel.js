@@ -1,15 +1,15 @@
-const { pool } = require('../config/db');
+const { pool } = require("../config/db");
 
 async function createOrder({ userId, items }) {
   // items: [{ menuId, quantity, unitPrice }]
   const client = await pool.connect();
 
   try {
-    await client.query('BEGIN');
+    await client.query("BEGIN");
 
     const totalAmount = items.reduce(
       (sum, item) => sum + Number(item.unitPrice) * Number(item.quantity),
-      0
+      0,
     );
 
     const orderInsert = `
@@ -17,7 +17,10 @@ async function createOrder({ userId, items }) {
       VALUES ($1, $2, 'pending')
       RETURNING *;
     `;
-    const { rows: orderRows } = await client.query(orderInsert, [userId, totalAmount]);
+    const { rows: orderRows } = await client.query(orderInsert, [
+      userId,
+      totalAmount,
+    ]);
     const order = orderRows[0];
 
     const itemInsert = `
@@ -35,19 +38,19 @@ async function createOrder({ userId, items }) {
         order.id,
         item.menuId,
         item.quantity,
-        item.unitPrice
+        item.unitPrice,
       ]);
       orderItems.push(rows[0]);
     }
 
-    await client.query('COMMIT');
+    await client.query("COMMIT");
 
     return {
       order,
-      items: orderItems
+      items: orderItems,
     };
   } catch (err) {
-    await client.query('ROLLBACK');
+    await client.query("ROLLBACK");
     throw err;
   } finally {
     client.release();
@@ -55,19 +58,19 @@ async function createOrder({ userId, items }) {
 }
 
 async function getOrderById(id) {
-  const orderQuery = 'SELECT * FROM orders WHERE id = $1';
-  const itemsQuery = 'SELECT * FROM order_items WHERE order_id = $1';
+  const orderQuery = "SELECT * FROM orders WHERE id = $1";
+  const itemsQuery = "SELECT * FROM order_items WHERE order_id = $1";
 
   const [orderResult, itemsResult] = await Promise.all([
     pool.query(orderQuery, [id]),
-    pool.query(itemsQuery, [id])
+    pool.query(itemsQuery, [id]),
   ]);
 
   if (orderResult.rows.length === 0) return null;
 
   return {
     order: orderResult.rows[0],
-    items: itemsResult.rows
+    items: itemsResult.rows,
   };
 }
 
@@ -88,12 +91,12 @@ async function listOrdersByUser({ userId, page = 1, limit = 10 }) {
 
   const [ordersResult, countResult] = await Promise.all([
     pool.query(ordersQuery, [userId, limit, offset]),
-    pool.query(countQuery, [userId])
+    pool.query(countQuery, [userId]),
   ]);
 
   return {
     items: ordersResult.rows,
-    total: Number(countResult.rows[0].total)
+    total: Number(countResult.rows[0].total),
   };
 }
 
@@ -101,16 +104,31 @@ async function listAllOrders({ page = 1, limit = 10 }) {
   const offset = (page - 1) * limit;
 
   const ordersQuery = `
-    SELECT o.*, u.name AS customer_name, u.email AS customer_email
+    SELECT 
+      o.id,
+      o.total_amount,
+      o.status,
+      o.created_at,
+      u.name AS customer_name,
+      u.email AS customer_email,
+      json_agg(
+        json_build_object(
+          'menu_id', m.id,
+          'menu_name', m.name,
+          'quantity', oi.quantity,
+          'unit_price', oi.unit_price
+        )
+      ) AS items
     FROM orders o
     JOIN users u ON o.user_id = u.id
+    JOIN order_items oi ON oi.order_id = o.id
+    JOIN menu m ON m.id = oi.menu_id
+    GROUP BY o.id, u.name, u.email
     ORDER BY o.created_at DESC
     LIMIT $1 OFFSET $2;
   `;
-  const countQuery = `
-    SELECT COUNT(*) AS total
-    FROM orders;
-  `;
+
+  const countQuery = `SELECT COUNT(*) AS total FROM orders`;
 
   const [ordersResult, countResult] = await Promise.all([
     pool.query(ordersQuery, [limit, offset]),
@@ -132,7 +150,7 @@ async function updateOrderStatus(id, status) {
     WHERE id = $2
     RETURNING *;
     `,
-    [status, id]
+    [status, id],
   );
   return rows[0] || null;
 }
@@ -142,6 +160,5 @@ module.exports = {
   getOrderById,
   listOrdersByUser,
   listAllOrders,
-  updateOrderStatus
+  updateOrderStatus,
 };
-

@@ -89,10 +89,56 @@ async function listAll(req, res, next) {
   }
 }
 
+async function updateStatus(req, res, next) {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    const updated = await require("../models/orderModel").updateOrderStatus(
+      id,
+      status
+    );
+
+    if (!updated) {
+      return res.status(404).json({ message: "Order not found" });
+    }
+
+    return res.status(200).json({
+      message: "Order status updated",
+      order: updated,
+    });
+  } catch (err) {
+    return next(err);
+  }
+}
+
+async function deleteOrder(req, res, next) {
+  try {
+    const { id } = req.params;
+
+    const { rowCount } = await require("../config/db").pool.query(
+      `DELETE FROM orders WHERE id = $1`,
+      [id]
+    );
+
+    if (rowCount === 0) {
+      return res.status(404).json({ message: "Order not found" });
+    }
+
+    return res.status(200).json({
+      message: "Order deleted successfully",
+    });
+  } catch (err) {
+    return next(err);
+  }
+}
+
 module.exports = {
   create,
   getById,
   listMyOrders,
-  listAll
+  listAll,
+  updateStatus,
+  deleteOrder
 };
 

@@ -4,7 +4,7 @@ const multer = require('multer');
 const storage = multer.memoryStorage();
 
 function fileFilter(req, file, cb) {
-  const allowed = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+  const allowed = ['image/jpeg', 'image/png', 'image/webp', 'image/gif','image/svg+xml', 'image/jpg', 'image/bmp', 'image/tiff', 'image/x-icon', 'image/heic', 'image/heif', 'image/avif', 'image/vnd.microsoft.icon', 'image/psd', 'image/ai', 'image/eps', 'image/fpx', 'image/indd', 'image/jp2', 'image/jpx', 'image/jpm', 'image/mrsid', 'image/sgi', 'image/svg+xml', 'image/tiff', 'image/webp'];
 
   if (!allowed.includes(file.mimetype)) {
     return cb(new Error('Only image files are allowed'), false);

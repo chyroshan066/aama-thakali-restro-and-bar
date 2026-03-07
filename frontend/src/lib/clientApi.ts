@@ -3,8 +3,8 @@
 const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:5000/api';
 
-const TOKEN_KEY = 'meraki_admin_token';
-const USER_KEY = 'meraki_admin_user';
+const TOKEN_KEY = 'token';
+const USER_KEY = 'user';
 
 export function getStoredToken(): string | null {
   if (typeof window === 'undefined') return null;

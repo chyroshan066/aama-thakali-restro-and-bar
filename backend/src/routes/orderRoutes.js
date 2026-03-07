@@ -59,5 +59,30 @@ router.get(
   orderController.getById
 );
 
+// Admin: update order status (accept / cancel / paid)
+router.patch(
+  "/:id/status",
+  authRequired,
+  requireRole("admin"),
+  [
+    param("id").isInt({ min: 1 }),
+    body("status")
+      .isIn(["pending", "accepted", "paid", "cancelled"])
+      .withMessage("Invalid order status")
+  ],
+  validateRequest,
+  orderController.updateStatus
+);
+
+// Admin: delete order
+router.delete(
+  "/:id",
+  authRequired,
+  requireRole("admin"),
+  [param("id").isInt({ min: 1 })],
+  validateRequest,
+  orderController.deleteOrder
+);
+
 module.exports = router;
 

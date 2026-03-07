@@ -8,7 +8,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:5
 
 export default function LoginPage() {
   const router = useRouter();
-  const [isRegister, setIsRegister] = useState(false); // Toggle state
+  const [isRegister, setIsRegister] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,7 +36,6 @@ export default function LoginPage() {
         throw new Error(data?.message || 'Authentication failed');
       }
 
-      // Automatically log in after registration or use login data
       storeAuth(data.token, data.user);
       router.push('/');
       router.refresh(); 
@@ -48,67 +47,71 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center bg-[#0a0a0a] p-6 selection:bg-[#63d3a6]/30">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-[#63d3a6]/5 blur-[120px]" />
-        <div className="absolute -bottom-[10%] -right-[10%] h-[40%] w-[40%] rounded-full bg-[#63d3a6]/5 blur-[120px]" />
+    <div className="relative flex min-h-screen items-center justify-center bg-[#0a0a0a] p-6 selection:bg-[#e4c590]/30 overflow-hidden">
+      {/* Background Aesthetic Layer */}
+      <div className="absolute inset-0 z-0 opacity-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a] to-[#0a0a0a]" />
+        <img 
+          src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop" 
+          alt="Restaurant Background" 
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      <div className="w-full max-w-[420px] z-10">
+      <div className="w-full max-w-[420px] z-10 animate-in fade-in zoom-in duration-700">
+        {/* Branding Header */}
         <div className="mb-10 text-center">
-          <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#63d3a6] font-bold mb-3">
-            {isRegister ? 'New Account' : 'Secure Access'}
+          <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#e4c590] font-bold mb-3">
+            {isRegister ? 'Join Us' : 'Welcome Back'}
           </h2>
-          <h1 className="text-4xl font-serif italic text-white tracking-tight">Hidden Hut</h1>
-          <p className="mt-3 text-[11px] uppercase tracking-widest text-gray-500 font-medium">
-            Administrative Portal
-          </p>
+          <h1 className="text-5xl font-serif italic text-white tracking-tight">Hidden Hut</h1>
+          <div className="w-12 h-[1px] bg-[#e4c590] mx-auto mt-6 opacity-40"></div>
         </div>
 
-        <div className="border border-white/5 bg-white/[0.02] p-8 md:p-10 backdrop-blur-md shadow-2xl">
+        {/* Auth Card */}
+        <div className="border border-white/10 bg-white/[0.02] p-8 md:p-10 backdrop-blur-xl shadow-2xl rounded-sm">
           <form className="space-y-6" onSubmit={handleSubmit}>
             
-            {/* Show Name field only if Registering */}
             {isRegister && (
-              <div className="space-y-2 animate-in fade-in duration-500">
+              <div className="space-y-2 animate-in slide-in-from-top-2 duration-500">
                 <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
-                  Admin Name
+                  Full Name
                 </label>
                 <input
                   type="text"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#63d3a6] transition-all placeholder:text-gray-800"
-                  placeholder="Full Name"
+                  className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                  placeholder="Rajesh Sharma"
                 />
               </div>
             )}
 
             <div className="space-y-2">
               <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
-                Email Identity
+                Email Address
               </label>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#63d3a6] transition-all placeholder:text-gray-800"
-                placeholder="admin@hiddenhut.com"
+                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                placeholder="email@example.com"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
-                Security Key
+                Password
               </label>
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#63d3a6] transition-all placeholder:text-gray-800"
+                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
                 placeholder="••••••••"
               />
             </div>
@@ -119,35 +122,32 @@ export default function LoginPage() {
               </div>
             )}
 
-            <div className="space-y-4">
+            <div className="space-y-6 pt-4">
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full overflow-hidden bg-[#63d3a6] py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[#0a2e1f] transition-all hover:bg-[#52b18c] disabled:opacity-50 mt-2"
+                className="w-full bg-[#e4c590] py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-black transition-all hover:bg-[#d4b580] disabled:opacity-50 shadow-lg active:scale-[0.98]"
               >
-                <span className="relative z-10">
-                  {loading ? 'Verifying...' : isRegister ? 'Create Admin Account' : 'Authorize Login'}
-                </span>
+                {loading ? 'Verifying...' : isRegister ? 'Create Account' : 'Sign In'}
               </button>
 
-              {/* Toggle Link */}
               <button
                 type="button"
                 onClick={() => {
                   setIsRegister(!isRegister);
                   setError(null);
                 }}
-                className="w-full text-center text-[10px] uppercase tracking-widest text-gray-500 hover:text-[#63d3a6] transition-colors"
+                className="w-full text-center text-[10px] uppercase tracking-widest text-gray-500 hover:text-[#e4c590] transition-colors"
               >
-                {isRegister ? 'Already have access? Login' : 'New Admin? Request Access'}
+                {isRegister ? 'Already have an account? Login' : "Don't have an account? Register"}
               </button>
             </div>
           </form>
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-[9px] uppercase tracking-[0.3em] text-gray-700">
-            For Authorized Use Only &copy; 2026
+        <div className="mt-12 text-center">
+          <p className="text-[9px] uppercase tracking-[0.4em] text-gray-600">
+            &copy; 2026 Hidden Hut Restaurant Group
           </p>
         </div>
       </div>

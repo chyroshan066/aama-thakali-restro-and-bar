@@ -5,7 +5,6 @@ let isConnected = false;
 
 async function connectToPostgres() {
   try {
-    // Verify database connection on startup for easier debugging
     await pool.query("SELECT 1");
     isConnected = true;
     console.log("Database connection successful");
@@ -16,7 +15,11 @@ async function connectToPostgres() {
   }
 }
 
+// Middleware to ensure DB connection
 app.use(async (req, res, next) => {
+  // Skip OPTIONS requests (preflight) to avoid 405
+  if (req.method === 'OPTIONS') return res.sendStatus(200);
+
   if (!isConnected) {
     try {
       await connectToPostgres();
@@ -27,5 +30,5 @@ app.use(async (req, res, next) => {
   next();
 });
 
-//don't use app.listen() in vercel.json
+// Don't use app.listen() on Vercel
 module.exports = app;

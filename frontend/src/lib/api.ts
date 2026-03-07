@@ -59,16 +59,4 @@ export async function fetchMenu(config?: ApiConfig) {
   return request<PaginatedResponse<MenuItem>>("/menu", config);
 }
 
-export type User = {
-  id: number;
-  name: string;
-  email: string;
-  role: string;
-  created_at: string;
-};
-
-export async function fetchUsers(config?: ApiConfig) {
-  return request<{ data: User[] }>("/users", config);
-}
-
 

@@ -174,9 +174,9 @@ export const Header = memo(() => {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "15px",
+              gap: "25px", // Slightly increased gap for better breathing room
               marginLeft: "auto",
-              marginRight: "20px",
+              marginRight: "25px",
             }}
           >
             <NavButton
@@ -185,10 +185,10 @@ export const Header = memo(() => {
               href="#contact"
             />
 
+            {/* Separator line for a premium feel */}
+            <div className="h-6 w-[1px] bg-white/10 hidden md:block"></div>
+
             <Login />
-
-
-           
           </div>
 
           <button

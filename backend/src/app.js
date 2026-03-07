@@ -20,11 +20,19 @@ const allowedOrigins = [
   "http://localhost:3000",
   "https://meraki-cafe-restaurant-and-bar.vercel.app"
 ];
-// Basic security / CORS and body parsing
-app.use(cors({
+
+// CORS configuration
+const corsOptions = {
   origin: allowedOrigins,
-  credentials: true
-}));
+  credentials: true,
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization']
+};
+
+// Apply CORS before all routes/middleware
+app.use(cors(corsOptions));
+// Handle preflight OPTIONS requests
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -52,4 +60,3 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 module.exports = app;
-
