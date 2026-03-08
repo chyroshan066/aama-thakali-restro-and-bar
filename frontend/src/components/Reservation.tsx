@@ -121,7 +121,7 @@ export const Reservation = memo(() => {
                 message: data.message,
             };
 
-            const response = await fetch("https://meraki-cafe-restaurant-and-bar.vercel.app/api/reservations", {
+            const response = await fetch("https://meraki-cafe-restaurant-and-bar-one.vercel.app/api/reservations", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

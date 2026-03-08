@@ -651,7 +651,7 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "http://localhost:5000"
+      "value": "https://meraki-cafe-restaurant-and-bar-one.vercel.app"
     },
     {
       "key": "auth_token",
