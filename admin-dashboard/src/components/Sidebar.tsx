@@ -12,9 +12,9 @@ const navItems: NavItem[] = [
   { label: "Overview", href: "/" },
   { label: "Orders", href: "/orders" },
   { label: "Users", href: "/users" },
-  { label: "Menu Gallery", href: "/menu" },
-  { label: "Visual Assets", href: "/gallery" },
-  { label: "Guest Registry", href: "/reservations" },
+  { label: "Menu ", href: "/menu" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Reservations", href: "/reservations" },
 ];
 
 export function Sidebar() {
@@ -39,9 +39,9 @@ export function Sidebar() {
 
       {/* Navigation */}
       <nav className="flex-1 space-y-1">
-        <p className="mb-6 text-[9px] uppercase tracking-[0.3em] text-gray-700 font-bold px-3">
+        {/* <p className="mb-6 text-[9px] uppercase tracking-[0.3em] text-gray-700 font-bold px-3">
           Console Directory
-        </p>
+        </p> */}
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           return (
