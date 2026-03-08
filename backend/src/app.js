@@ -18,7 +18,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://meraki-cafe-restaurant-and-bar.vercel.app"
+  "https://meraki-cafe-restaurant-and-bar.vercel.app",
+  "https://meraki-cafe-restaurant-and-bar-dun.vercel.app"
 ];
 
 // CORS configuration
