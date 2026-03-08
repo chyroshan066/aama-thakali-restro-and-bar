@@ -466,7 +466,7 @@ export const Reservation = memo(() => {
                 href="tel:+97725570068"
                 className="body-1 contact-number hover-underline"
               >
-                +977-25-570068
+                +977-9806658055
               </a>
               <div className="separator"></div>
               <p className="contact-label">Location</p>
