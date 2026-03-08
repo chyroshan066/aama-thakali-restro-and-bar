@@ -1,10 +1,10 @@
-# The Hidden Hut Restaurant & Bar Website
+# The Meraki Cafe Restaurant & Bar Website
 
-A modern, responsive restaurant website built for The Hidden Hut Restaurant & Bar, featuring online reservations, menu showcase, and customer engagement features.
+A modern, responsive restaurant website built for The Meraki Cafe Restaurant & Bar, featuring online reservations, menu showcase, and customer engagement features.
 
 ## 🍽️ About
 
-The Hidden Hut Restaurant & Bar is a premium restaurant website designed to provide customers with an exceptional digital dining experience. The site features elegant design, smooth animations, and intuitive navigation to showcase the restaurant's offerings and facilitate easy reservations.
+The Meraki Cafe Restaurant & Bar is a premium restaurant website designed to provide customers with an exceptional digital dining experience. The site features elegant design, smooth animations, and intuitive navigation to showcase the restaurant's offerings and facilitate easy reservations.
 
 ## ✨ Features
 
@@ -206,7 +206,7 @@ npm run export  # if using static export
 ## 📞 Support & Maintenance
 
 ### Client Information
-- **Restaurant**: The Hidden Hut Restaurant & Bar
+- **Restaurant**: The Meraki Cafe Restaurant & Bar
 - **Domain**: hiddenhutrestaurant.com
 - **Deployment**: Vercel
 
@@ -215,7 +215,7 @@ For technical support or website updates, contact the developer.
 
 ## 📝 License
 
-This project is proprietary software developed specifically for The Hidden Hut Restaurant & Bar.
+This project is proprietary software developed specifically for The Meraki Cafe Restaurant & Bar.
 
 ---
 

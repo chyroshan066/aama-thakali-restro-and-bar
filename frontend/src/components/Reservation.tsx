@@ -22,7 +22,7 @@ const AuthModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
                 <p className="text-[#c19977] uppercase tracking-[0.4em] text-[10px] mb-3">Priority Access</p>
                 <h2 className="text-2xl font-serif italic text-white mb-4">Secure Your Table</h2>
                 <p className="text-gray-400 text-xs mb-8 leading-relaxed tracking-wide">
-                    To manage your reservations and ensure a seamless dining experience, please sign in to your Hidden Hut account.
+                    To manage your reservations and ensure a seamless dining experience, please sign in to your Meraki Cafe account.
                 </p>
                 <div className="space-y-3">
                     <Link 

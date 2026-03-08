@@ -37,7 +37,7 @@ export const PreLoader = memo(({
             onTransitionEnd={handleTransitionEnd}
         >
             <div className="circle"></div>
-            <p className="text">Hidden Hut</p>
+            <p className="text">Meraki Cafe</p>
         </div>
     );
 });

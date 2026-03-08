@@ -233,7 +233,7 @@ export const Footer = memo(() => {
                 </div>
                 <div className="footer-bottom">
                     <p className="copyright">
-                        &copy; 2025 The Hidden Hut Restaurant & Bar. All Rights Reserved | Crafted by <a href="https://github.com/chyroshan066"
+                        &copy; 2025 The Meraki Cafe Restaurant & Bar. All Rights Reserved | Crafted by <a href="https://github.com/chyroshan066"
                             target="_blank" className="link">chyroshan066</a>
                     </p>
                 </div>
