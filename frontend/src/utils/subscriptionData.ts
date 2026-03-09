@@ -12,7 +12,7 @@ interface SubscriptionEmail extends Subscription {
 
 export const onSubscriptionSubmit = async (data: SubscriptionFormData) => {
     // Ensure we use the base URL from your environment variables
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api";
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
     
     const response = await fetch(`${baseUrl}/subscribe`, {
         method: "POST",
