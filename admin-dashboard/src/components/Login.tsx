@@ -37,7 +37,7 @@ export function Login() {
   function handleLogout() {
     clearAuth();
     setIsMenuOpen(false);
-    router.push("/login");
+    router.push("https://meraki-cafe-restaurant-and-bar.vercel.app");
   }
 
   return (
