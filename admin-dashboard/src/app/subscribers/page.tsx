@@ -67,7 +67,7 @@ export default function SubscribersPage() {
               <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#c19977] font-semibold mb-2">
                 Marketing Outreach
               </h2>
-              <h1 className="text-4xl font-serif italic tracking-tight text-white">Newsletter Registry</h1>
+              <h1 className="text-4xl font-serif italic tracking-tight text-white"> Subscribers </h1>
               <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#c19977] to-transparent"></div>
             </div>
 

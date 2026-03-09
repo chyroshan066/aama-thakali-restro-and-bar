@@ -208,6 +208,7 @@ export default function OrdersPage() {
 
                       <td className="px-6 py-5">
                         <div className="flex items-center justify-end gap-3">
+                          {/* PHASE 1: Pending Actions */}
                           {order.status === "pending" && (
                             <>
                               <button
@@ -230,6 +231,19 @@ export default function OrdersPage() {
                             </>
                           )}
 
+                          {/* PHASE 2: Accepted Actions - Show "Mark as Paid" */}
+                          {order.status === "accepted" && (
+                            <button
+                              onClick={() =>
+                                handleStatusChange(order.id, "paid")
+                              }
+                              className="px-3 py-1.5 text-[9px] uppercase tracking-widest border border-emerald-900/40 text-emerald-500 hover:bg-emerald-600 hover:text-black transition-all"
+                            >
+                              Mark Paid
+                            </button>
+                          )}
+
+                          {/* PERMANENT: Delete/Purge Option */}
                           <button
                             onClick={() => handleDelete(order.id)}
                             className="p-1.5 text-zinc-800 hover:text-rose-500 transition-colors"
@@ -264,7 +278,7 @@ export default function OrdersPage() {
 
           <footer className="mt-16 text-center">
             <p className="text-[9px] uppercase tracking-[0.4em] text-gray-800">
-              Live Data Feed • Meraki Cafe Kathmandu
+              Live Data Feed • Meraki Restro Kathmandu
             </p>
           </footer>
         </div>

@@ -67,7 +67,7 @@ export default function LoginPage() {
           <h2 className="text-[12px] uppercase tracking-[0.5em] text-[#e4c590] font-bold mb-3">
             {isRegister ? 'Join Us' : 'Welcome Back'}
           </h2>
-          <h1 className="text-6xl font-serif italic text-white tracking-tight">Meraki Cafe</h1>
+          <h1 className="text-6xl font-serif italic text-white tracking-tight">Meraki Restro</h1>
           <div className="w-12 h-[1px] bg-[#e4c590] mx-auto mt-6 opacity-40"></div>
         </div>
 
@@ -170,7 +170,7 @@ export default function LoginPage() {
 
         <div className="mt-12 text-center">
           <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600">
-            &copy; 2026 Meraki Cafe Restaurant Group
+            &copy; 2026 Meraki Restro Restaurant Group
           </p>
         </div>
       </div>

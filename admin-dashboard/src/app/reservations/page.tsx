@@ -16,7 +16,7 @@ type ReservationsState =
   | { status: "error"; message: string }
   | { status: "success"; reservations: Reservation[] };
 
-// Helper for dynamic status coloring - Meraki Cafe Gold Palette
+// Helper for dynamic status coloring - Meraki Restro Gold Palette
 const getStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
     case 'approved': return 'text-[#c19977] border-[#c19977]/30 bg-[#c19977]/5';
@@ -167,7 +167,7 @@ export default function ReservationsPage() {
           )}
           
           <footer className="mt-24 text-center">
-              <p className="text-[9px] uppercase tracking-[0.6em] text-gray-800">Hospitality • Precision • Meraki Cafe Kathmandu</p>
+              <p className="text-[9px] uppercase tracking-[0.6em] text-gray-800">Hospitality • Precision • Meraki Restro Kathmandu</p>
           </footer>
         </div>
       </main>

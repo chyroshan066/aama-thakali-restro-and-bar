@@ -36,7 +36,7 @@ const AuthModal = ({
         </h2>
         <p className="text-gray-400 text-xs mb-8 leading-relaxed tracking-wide">
           To manage your reservations and ensure a seamless dining experience,
-          please sign in to your Meraki Cafe account.
+          please sign in to your Meraki Restro account.
         </p>
         <div className="space-y-3">
           <Link

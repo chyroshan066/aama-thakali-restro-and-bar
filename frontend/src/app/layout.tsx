@@ -35,7 +35,7 @@ const dm_sans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "The Meraki Cafe Restaurant & Bar - Authentic Nepali Restaurant",
+  title: "The Meraki Restro Restaurant & Bar - Authentic Nepali Restaurant",
   description: "Experience authentic Nepali BBQ at Gurung BBQ. Savor traditional grilled meats, momos, and Himalayan flavors in a warm, welcoming atmosphere. Fresh ingredients, bold spices, and time-honored recipes.",
   keywords: [
     "Gurung BBQ",
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
     "family restaurant Dharan",
     "local restaurant Dharan"
   ],
-  authors: [{ name: "The Meraki Cafe Restaurant & Bar" }],
-  creator: "The Meraki Cafe Restaurant & Bar",
-  publisher: "The Meraki Cafe Restaurant & Bar",
+  authors: [{ name: "The Meraki Restro Restaurant & Bar" }],
+  creator: "The Meraki Restro Restaurant & Bar",
+  publisher: "The Meraki Restro Restaurant & Bar",
   metadataBase: new URL("https://www.hiddenhutrestaurant.com/"),
   alternates: {
     canonical: "/",
@@ -116,25 +116,25 @@ export const metadata: Metadata = {
   },
   manifest: '/favicon_io/site.webmanifest',
   openGraph: {
-    title: "The Meraki Cafe Restaurant & Bar - Authentic Nepali Restaurant",
+    title: "The Meraki Restro Restaurant & Bar - Authentic Nepali Restaurant",
     description: "Experience authentic Nepali BBQ at Gurung BBQ. Savor traditional grilled meats, momos, and Himalayan flavors in a warm, welcoming atmosphere. Fresh ingredients, bold spices, and time-honored recipes.",
     type: "website",
     locale: "en_US",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
-    siteName: "The Meraki Cafe Restaurant & Bar",
+    siteName: "The Meraki Restro Restaurant & Bar",
     images: [
       {
         url: "/images/preview.webp",
         width: 1200,
         height: 630,
-        alt: "The Meraki Cafe Restaurant & Bar Preview",
+        alt: "The Meraki Restro Restaurant & Bar Preview",
       }
     ],
   },
   category: "restaurant",
   classification: "Restaurant",
   referrer: "origin-when-cross-origin",
-  applicationName: "The Meraki Cafe Restaurant & Bar",
+  applicationName: "The Meraki Restro Restaurant & Bar",
   generator: "Next.js",
 };
 

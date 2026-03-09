@@ -61,7 +61,7 @@ export default function LoginPage() {
           <h2 className="text-[10px] uppercase tracking-[0.6em] text-[#c19977] font-semibold mb-4 animate-pulse">
             {isRegister ? 'Credential Registry' : 'Identity Verification'}
           </h2>
-          <h1 className="text-5xl font-serif italic text-white tracking-tighter mb-2">Meraki Cafe</h1>
+          <h1 className="text-5xl font-serif italic text-white tracking-tighter mb-2">Meraki Restro</h1>
           <div className="flex items-center justify-center gap-4 mt-4">
              <div className="h-[1px] w-8 bg-[#c19977]/30"></div>
              <p className="text-[11px] uppercase tracking-[0.3em] text-gray-500 font-medium whitespace-nowrap">
@@ -158,7 +158,7 @@ export default function LoginPage() {
 
         <div className="mt-12 text-center opacity-40">
           <p className="text-[9px] uppercase tracking-[0.5em] text-gray-600">
-             &copy; 2026 Meraki Cafe • Restricted Access
+             &copy; 2026 Meraki Restro • Restricted Access
           </p>
         </div>
       </div>

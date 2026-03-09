@@ -177,7 +177,7 @@ export default function HomePage() {
           </section>
 
           <footer className="mt-20 border-t border-white/[0.05] py-10 text-center">
-              <p className="text-[10px] uppercase tracking-[0.6em] text-gray-700">Meraki Cafe Restaurant & Bar • Kathmandu</p>
+              <p className="text-[10px] uppercase tracking-[0.6em] text-gray-700">Meraki Restro Restaurant & Bar • Kathmandu</p>
           </footer>
         </div>
       </main>

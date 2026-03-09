@@ -15,7 +15,7 @@
 //         <p className="text-[#c19977] uppercase tracking-[0.4em] text-[10px] mb-3">Reservations Required</p>
 //         <h2 className="text-2xl font-serif italic text-white mb-4">Savor the Experience</h2>
 //         <p className="text-gray-400 text-xs mb-8 leading-relaxed tracking-wide">
-//           To finalize your order and explore our curated flavors, please sign in to your Meraki Cafe account.
+//           To finalize your order and explore our curated flavors, please sign in to your Meraki Restro account.
 //         </p>
 //         <div className="space-y-3">
 //           <Link 
@@ -257,7 +257,7 @@ const AuthModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
         <p className="text-[#c19977] uppercase tracking-[0.4em] text-[10px] mb-3">Reservations Required</p>
         <h2 className="text-2xl font-serif italic text-white mb-4">Savor the Experience</h2>
         <p className="text-gray-400 text-xs mb-8 leading-relaxed tracking-wide">
-          To finalize your order and explore our curated flavors, please sign in to your Meraki Cafe account.
+          To finalize your order and explore our curated flavors, please sign in to your Meraki Restro account.
         </p>
         <div className="space-y-3">
           <Link 
@@ -382,7 +382,7 @@ const MenuCard = memo(
                 <button
                   onClick={handleOrder}
                   disabled={isOrdering}
-                  className="btn-secondary px-6 py-2 label-2 uppercase tracking-widest border border-[#c19977] text-[#c19977] hover:bg-[#c19977] hover:text-black transition-all"
+                  className="btn-secondary px-6 py-2 label-2 uppercase tracking-widest border border-[#c19977] text-black font-bold hover:bg-black hover:text-white transition-all"
                 >
                   {isOrdering ? "..." : "Order"}
                 </button>

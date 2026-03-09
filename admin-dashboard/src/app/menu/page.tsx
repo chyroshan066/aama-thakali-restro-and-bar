@@ -304,7 +304,7 @@ export default function MenuPage() {
 
           <footer className="mt-24 border-t border-white/[0.05] pt-12 text-center">
             <p className="text-[9px] uppercase tracking-[0.6em] text-gray-700">
-              Meraki Cafe Culinary Registry • Kathmandu
+              Meraki Restro Culinary Registry • Kathmandu
             </p>
           </footer>
         </div>
