@@ -15,7 +15,7 @@ function generateToken(user) {
 
 async function register(req, res, next) {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, phone_no, password, role } = req.body;
 
     const existing = await findUserByEmail(email);
     if (existing) {
@@ -25,6 +25,7 @@ async function register(req, res, next) {
     const user = await createUser({
       name,
       email,
+      phoneNo: req.body.phone_no,
       password,
       role: role === 'admin' ? 'admin' : 'customer'
     });
@@ -63,6 +64,7 @@ async function login(req, res, next) {
         id: user.id,
         name: user.name,
         email: user.email,
+        phone_no: user.phone_no,
         role: user.role
       },
       token

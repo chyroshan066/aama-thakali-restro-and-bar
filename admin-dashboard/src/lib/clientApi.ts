@@ -66,6 +66,8 @@ export async function fetchGalleryClient() {
 export type Reservation = {
   id: number;
   user_id: number;
+  customer_name: string;
+  phone_no: string;
   date: string;
   time: string;
   number_of_guests: number;

@@ -15,6 +15,7 @@ const navItems: NavItem[] = [
   { label: "Menu ", href: "/menu" },
   { label: "Gallery", href: "/gallery" },
   { label: "Reservations", href: "/reservations" },
+  { label: "Subscribers", href: "/subscribers" }
 ];
 
 export function Sidebar() {

@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   email VARCHAR(150) NOT NULL UNIQUE,
+  phone_no VARCHAR(15),
   password_hash VARCHAR(255) NOT NULL,
   role VARCHAR(20) NOT NULL DEFAULT 'customer', -- 'admin' or 'customer'
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -98,3 +99,13 @@ CREATE INDEX IF NOT EXISTS idx_reviews_menu_id ON reviews(menu_id);
 CREATE INDEX IF NOT EXISTS idx_reviews_user_id ON reviews(user_id);
 
 
+
+-- Newsletter subscriptions for marketing emails
+CREATE TABLE IF NOT EXISTS newsletter_subscriptions (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    subscribed_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Index for faster email lookups (useful for checking if already subscribed)
+CREATE INDEX IF NOT EXISTS idx_newsletter_email ON newsletter_subscriptions(email);

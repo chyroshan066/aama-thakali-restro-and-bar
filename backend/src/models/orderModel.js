@@ -111,6 +111,7 @@ async function listAllOrders({ page = 1, limit = 10 }) {
       o.created_at,
       u.name AS customer_name,
       u.email AS customer_email,
+      u.phone_no AS customer_phone,
       json_agg(
         json_build_object(
           'menu_id', m.id,
@@ -123,7 +124,7 @@ async function listAllOrders({ page = 1, limit = 10 }) {
     JOIN users u ON o.user_id = u.id
     JOIN order_items oi ON oi.order_id = o.id
     JOIN menu m ON m.id = oi.menu_id
-    GROUP BY o.id, u.name, u.email
+    GROUP BY o.id, u.name, u.email,u.phone_no
     ORDER BY o.created_at DESC
     LIMIT $1 OFFSET $2;
   `;

@@ -34,6 +34,8 @@ export type OrderItem = {
 export type Order = {
   id: number;
   total_amount: number;
+  customer_email: string | null;
+  customer_phone: string | null;
   status: string;
   created_at: string;
   customer_name?: string | null;
@@ -71,12 +73,26 @@ export type User = {
   id: number;
   name: string;
   email: string;
+  phone_no?: string | null;
   role: string;
   created_at: string;
 };
 
 export async function fetchUsers(config?: ApiConfig) {
   return request<{ data: User[] }>("/users", config);
+}
+
+export type Subscriber = {
+  id: number;
+  email: string;
+  subscribed_at: string;
+};
+
+export async function fetchSubscribers() {
+  // Replace with your actual backend URL logic
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/subscribers`);
+  if (!response.ok) throw new Error("Failed to fetch registry");
+  return response.json();
 }
 
 

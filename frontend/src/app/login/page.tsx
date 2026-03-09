@@ -11,6 +11,7 @@ export default function LoginPage() {
   const [isRegister, setIsRegister] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phoneNo, setPhoneNo] = useState(''); // 1. Added phone number state
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -21,7 +22,11 @@ export default function LoginPage() {
     setLoading(true);
 
     const endpoint = isRegister ? '/auth/register' : '/auth/login';
-    const payload = isRegister ? { name, email, password } : { email, password };
+    
+    // 2. Included phoneNo in the registration payload
+    const payload = isRegister 
+      ? { name, email, password, phone_no: phoneNo } 
+      : { email, password };
 
     try {
       const res = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -48,7 +53,6 @@ export default function LoginPage() {
 
   return (
     <div className="relative flex min-h-screen items-center justify-center bg-[#0a0a0a] p-6 selection:bg-[#e4c590]/30 overflow-hidden">
-      {/* Background Aesthetic Layer */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a] to-[#0a0a0a]" />
         <img 
@@ -59,48 +63,64 @@ export default function LoginPage() {
       </div>
 
       <div className="w-full max-w-[420px] z-10 animate-in fade-in zoom-in duration-700">
-        {/* Branding Header */}
         <div className="mb-10 text-center">
-          <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#e4c590] font-bold mb-3">
+          <h2 className="text-[12px] uppercase tracking-[0.5em] text-[#e4c590] font-bold mb-3">
             {isRegister ? 'Join Us' : 'Welcome Back'}
           </h2>
-          <h1 className="text-5xl font-serif italic text-white tracking-tight">Meraki Cafe</h1>
+          <h1 className="text-6xl font-serif italic text-white tracking-tight">Meraki Cafe</h1>
           <div className="w-12 h-[1px] bg-[#e4c590] mx-auto mt-6 opacity-40"></div>
         </div>
 
-        {/* Auth Card */}
         <div className="border border-white/10 bg-white/[0.02] p-8 md:p-10 backdrop-blur-xl shadow-2xl rounded-sm">
           <form className="space-y-6" onSubmit={handleSubmit}>
             
             {isRegister && (
-              <div className="space-y-2 animate-in slide-in-from-top-2 duration-500">
-                <label className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
-                  style={{ fontSize: '18px !important' }}
-                  placeholder="Rajesh Sharma"
-                />
-              </div>
+              <>
+                <div className="space-y-2 animate-in slide-in-from-top-2 duration-500">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                    style={{ fontSize: '18px' }}
+                    placeholder="Rajesh Sharma"
+                  />
+                </div>
+
+                {/* 3. Added Phone Number Input Field */}
+                <div className="space-y-2 animate-in slide-in-from-top-2 duration-600">
+                  <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
+                    Contact Number
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={phoneNo}
+                    onChange={(e) => setPhoneNo(e.target.value)}
+                    className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                    style={{ fontSize: '18px' }}
+                    placeholder="98XXXXXXXX"
+                  />
+                </div>
+              </>
             )}
 
             <div className="space-y-2">
-              <label className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
-                Email Address
+              <label className="text-[12px] font-bold uppercase tracking-[0.3em] text-gray-500 ml-1">
+                Email Identity
               </label>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
-                style={{ fontSize: '18px !important' }}
-                placeholder="email@example.com"
+                className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#c19977] transition-all placeholder:text-gray-800"
+                style={{ fontSize: '18px' }}
+                placeholder="admin@hiddenhut.com"
               />
             </div>
 
@@ -113,8 +133,8 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
-                style={{ fontSize: '18px !important' }}
+                className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#c19977] transition-all placeholder:text-gray-800"
+                style={{ fontSize: '18px' }}
                 placeholder="••••••••"
               />
             </div>
@@ -129,7 +149,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#e4c590] py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-black transition-all hover:bg-[#d4b580] disabled:opacity-50 shadow-lg active:scale-[0.98]"
+                className="w-full bg-[#e4c590] py-4 text-[13px] font-bold uppercase tracking-[0.3em] text-black transition-all hover:bg-[#d4b580] disabled:opacity-50 shadow-lg active:scale-[0.98]"
               >
                 {loading ? 'Verifying...' : isRegister ? 'Create Account' : 'Sign In'}
               </button>
@@ -140,7 +160,7 @@ export default function LoginPage() {
                   setIsRegister(!isRegister);
                   setError(null);
                 }}
-                className="w-full text-center text-[10px] uppercase tracking-widest text-gray-500 hover:text-[#e4c590] transition-colors"
+                className="w-full text-center text-[12px] uppercase tracking-widest text-gray-500 hover:text-[#e4c590] transition-colors"
               >
                 {isRegister ? 'Already have an account? Login' : "Don't have an account? Register"}
               </button>
@@ -149,7 +169,7 @@ export default function LoginPage() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-[9px] uppercase tracking-[0.4em] text-gray-600">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600">
             &copy; 2026 Meraki Cafe Restaurant Group
           </p>
         </div>

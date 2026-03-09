@@ -100,6 +100,7 @@ export default function ReservationsPage() {
                   <tr className="border-b border-white/10 bg-white/[0.01]">
                     <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Ref ID</th>
                     <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Guest Profile</th>
+                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Contact</th>
                     <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Schedule</th>
                     <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 text-center">Party Size</th>
                     <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Status</th>
@@ -110,10 +111,15 @@ export default function ReservationsPage() {
                   {state.reservations.length > 0 ? (
                     state.reservations.map((r) => (
                       <tr key={r.id} className="group transition-colors hover:bg-white/[0.02]">
-                        <td className="px-6 py-5 font-mono text-[10px] text-[#c19977]/60">#{r.id}</td>
+                        <td className="px-6 py-5 font-mono text-[15px] text-[#c19977]/60">#{r.id}</td>
                         <td className="px-6 py-5">
-                          <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">Client ID: {r.user_id}</p>
-                          <p className="text-[9px] text-gray-600 uppercase tracking-widest mt-1">Authorized Booking</p>
+                          <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">{r.customer_name}</p>
+                          <p className="text-[11px] font-serif italic text-[#c19977] mt-0.5">Client ID: {r.user_id}</p>
+                          {/* <p className="text-[9px] text-gray-600 uppercase tracking-widest mt-1">Authorized Booking</p> */}
+                        </td>
+                        <td className="px-6 py-5">
+                          
+                          <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">{r.phone_no}</p>
                         </td>
                         <td className="px-6 py-5">
                           <p className="text-sm text-white">
@@ -122,8 +128,8 @@ export default function ReservationsPage() {
                           <p className="text-[11px] font-serif italic text-[#c19977] mt-0.5">{r.time}</p>
                         </td>
                         <td className="px-6 py-5 text-center">
-                          <span className="text-xl font-serif italic text-white">{r.number_of_guests}</span>
-                          <span className="ml-2 text-[9px] uppercase tracking-widest text-gray-600">Pax</span>
+                          <span className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">{r.number_of_guests}</span>
+                          <span className="ml-2 text-[9px] uppercase tracking-widest text-gray-600">Per</span>
                         </td>
                         <td className="px-6 py-5">
                           <span className={`inline-block border px-4 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] ${getStatusColor(r.status)}`}>

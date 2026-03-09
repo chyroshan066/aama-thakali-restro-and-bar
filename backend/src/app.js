@@ -11,6 +11,7 @@ const orderRoutes = require('./routes/orderRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
 const userRoutes = require("./routes/userRoutes");
+const { handleSubscription, getSubscribers } = require('./controllers/newsletterController');
 
 const { notFoundHandler, errorHandler } = require('./middleware/errorMiddleware');
 
@@ -55,6 +56,8 @@ app.use('/api/gallery', galleryRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.post('/api/subscribe', handleSubscription);
+app.get('/api/subscribers', getSubscribers); 
 
 // 404 and error handlers
 app.use(notFoundHandler);

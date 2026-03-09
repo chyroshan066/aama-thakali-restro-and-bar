@@ -149,9 +149,9 @@ export default function HomePage() {
                 <tbody>
                   {latestOrders.map((order) => (
                     <tr key={order.id} className="group bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-                      <td className="px-6 py-5 font-mono text-[11px] text-[#c19977]/70 italic">#{order.id}</td>
+                      <td className="px-6 py-5 font-mono text-[15px] text-[#c19977]/60">#{order.id}</td>
                       <td className="px-6 py-5">
-                        <span className="text-sm font-serif italic text-white">{order.customer_name ?? "Walk-in Guest"}</span>
+                        <span className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">{order.customer_name ?? "Walk-in Guest"}</span>
                       </td>
                       <td className="px-6 py-5 text-sm font-medium text-gray-200">Rs. {Number(order.total_amount).toLocaleString()}</td>
                       <td className="px-6 py-5">
