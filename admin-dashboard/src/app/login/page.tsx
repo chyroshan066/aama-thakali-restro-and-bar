@@ -111,7 +111,7 @@ export default function LoginPage() {
 
             <div className="space-y-2">
               <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-500 ml-1">
-                Security Key
+                Password
               </label>
               <input
                 type="password"

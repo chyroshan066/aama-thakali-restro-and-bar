@@ -74,7 +74,7 @@ export default function LoginPage() {
             
             {isRegister && (
               <div className="space-y-2 animate-in slide-in-from-top-2 duration-500">
-                <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
+                <label className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
                   Full Name
                 </label>
                 <input
@@ -83,13 +83,14 @@ export default function LoginPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                  style={{ fontSize: '18px !important' }}
                   placeholder="Rajesh Sharma"
                 />
               </div>
             )}
 
             <div className="space-y-2">
-              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
+              <label className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
                 Email Address
               </label>
               <input
@@ -98,12 +99,13 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                style={{ fontSize: '18px !important' }}
                 placeholder="email@example.com"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
+              <label className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-500 ml-1">
                 Password
               </label>
               <input
@@ -112,6 +114,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                style={{ fontSize: '18px !important' }}
                 placeholder="••••••••"
               />
             </div>
