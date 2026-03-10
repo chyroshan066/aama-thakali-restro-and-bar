@@ -292,11 +292,14 @@ MenuCategory.displayName = "MenuCategory";
 export const Menu = memo(() => {
   const [menuList, setMenuList] = useState<BackendMenuType[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isFetchingMore, setIsFetchingMore] = useState(false); // <--- New state for button
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  // Separate function to fetch data for a specific page
   const fetchMenu = async (pageNumber: number) => {
+    // If we are just appending, trigger the small loader
+    if (pageNumber > 1) setIsFetchingMore(true);
+    
     try {
       const res = await fetch(
         `https://meraki-cafe-restaurant-and-bar-one.vercel.app/api/menu?page=${pageNumber}&limit=10`
@@ -305,20 +308,18 @@ export const Menu = memo(() => {
       
       const newItems = json.data || [];
       
-      // Append new items to existing list
       setMenuList((prev) => [...prev, ...newItems]);
-      
-      // If we got fewer items than the limit, there's no more data
       setHasMore(newItems.length === 10); 
     } catch (err) {
       console.error("Failed to fetch menu:", err);
     } finally {
       setLoading(false);
+      setIsFetchingMore(false); // <--- Stop the loader
     }
   };
 
   useEffect(() => {
-    fetchMenu(1); // Initial load
+    fetchMenu(1);
   }, []);
 
   const handleLoadMore = () => {
@@ -328,7 +329,11 @@ export const Menu = memo(() => {
   };
 
   if (loading && menuList.length === 0)
-    return <div className="section text-center"><p className="headline-1">Loading...</p></div>;
+    return (
+      <div className="section text-center">
+        <p className="headline-1 animate-pulse">Loading Menu...</p>
+      </div>
+    );
 
   const groupedMenu = menuList.reduce((acc: Record<string, BackendMenuType[]>, item) => {
     const category = item.category || "General";
@@ -340,29 +345,32 @@ export const Menu = memo(() => {
   return (
     <section className="section menu" aria-label="menu-label" id="menu">
       <div className="custom-container">
-        {/* ... (Header remains the same) */}
-
+        
         {Object.entries(groupedMenu).map(([category, items]) => (
           <MenuCategory key={category} title={category} arr={items} className="mt-40" />
         ))}
 
-        {/* Load More Button */}
         {hasMore && (
           <div className="text-center mt-20">
             <button 
               onClick={handleLoadMore}
-              className="btn btn-primary px-8 py-3 hover:text-black transition-colors"
-              
+              disabled={isFetchingMore} // <--- Disables button while fetching
+              className={`btn btn-primary px-8 py-3 transition-all duration-300 ${isFetchingMore ? 'opacity-50 cursor-wait' : 'hover:text-black'}`}
             >
-              Load More Items
+              <span className="text text-1">
+                {isFetchingMore ? "Loading..." : "Load More Items"}
+              </span>
+              <span className="text text-2" aria-hidden="true">
+                {isFetchingMore ? "Loading..." : "Load More Items"}
+              </span>
             </button>
           </div>
         )}
-
-        {/* ... (Footer images/shapes remain the same) */}
       </div>
     </section>
   );
 });
+
+Menu.displayName = "Menu";
 
 Menu.displayName = "Menu";
