@@ -5,7 +5,6 @@ import Link from "next/link";
 import { memo, useEffect, useState, useCallback } from "react";
 import { Alert } from "./Alert";
 import { AlertState } from "@/types";
-import { NavButton } from "./utility/Button/NavButton";
 
 const AuthModal = ({
   isOpen,
@@ -78,6 +77,9 @@ const MenuCard = memo(
     const [isOrdering, setIsOrdering] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const [showAuthModal, setShowAuthModal] = useState(false);
+    
+    // New state for description expansion
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const [alertState, setAlertState] = useState<AlertState>({
       isVisible: false,
@@ -128,13 +130,12 @@ const MenuCard = memo(
           throw new Error(errorData.message || "Failed to place order");
         }
 
-        // Consistent Success Alert
         showAlert(
           "success",
           `${quantity}x ${title} has been added to your selection.`,
           "Order Placed",
         );
-        setQuantity(1); // Reset quantity on success
+        setQuantity(1); 
       } catch (error) {
         const errorMessage =
           error instanceof Error ? error.message : "Failed to place order.";
@@ -176,9 +177,18 @@ const MenuCard = memo(
               </div>
 
               {description && (
-                <p className="card-text label-1 mt-1 opacity-60 line-clamp-1">
-                  {description}
-                </p>
+                <div className="mt-1">
+                  {/* Dynamic class: if expanded, remove line-clamp */}
+                  <p className={`card-text label-1 opacity-60 transition-all duration-300 ${isExpanded ? "" : "line-clamp-1"}`}>
+                    {description}
+                  </p>
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="text-[#c19977] text-[9px] uppercase tracking-widest mt-1 hover:underline focus:outline-none"
+                  >
+                    {isExpanded ? "Show Less" : "Read More"}
+                  </button>
+                </div>
               )}
 
               <div className="flex items-center justify-between mt-4">
@@ -302,14 +312,14 @@ export const Menu = memo(() => {
     
     try {
       const res = await fetch(
-        `https://meraki-cafe-restaurant-and-bar-one.vercel.app/api/menu?page=${pageNumber}&limit=10`
+        `https://meraki-cafe-restaurant-and-bar-one.vercel.app/api/menu?page=${pageNumber}&limit=25`
       );
       const json = await res.json();
       
       const newItems = json.data || [];
       
       setMenuList((prev) => [...prev, ...newItems]);
-      setHasMore(newItems.length === 10); 
+      setHasMore(newItems.length === 25); // Assuming the backend returns less than 25 items when there are no more
     } catch (err) {
       console.error("Failed to fetch menu:", err);
     } finally {
@@ -358,10 +368,10 @@ export const Menu = memo(() => {
               className={`btn btn-primary px-8 py-3 transition-all duration-300 ${isFetchingMore ? 'opacity-50 cursor-wait' : 'hover:text-black'}`}
             >
               <span className="text text-1">
-                {isFetchingMore ? "Loading..." : "Load More Items"}
+                {isFetchingMore ? "Loading Items..." : "Load More Items"}
               </span>
               <span className="text text-2" aria-hidden="true">
-                {isFetchingMore ? "Loading..." : "Load More Items"}
+                {isFetchingMore ? "Loading Items..." : "Load More Items"}
               </span>
             </button>
           </div>
