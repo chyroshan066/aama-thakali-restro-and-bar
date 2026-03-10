@@ -32,7 +32,7 @@ export const TopBar = memo(() => (
             <address className="topbar-item">
                 <Details
                     icon_name={"location-outline"}
-                    span_details={"Narsingh Chowk Marg, Kathmandu, Nepal"}
+                    span_details={"Narsingh Chowk, Thamel, Kathmandu, Nepal"}
                 />
             </address>
 

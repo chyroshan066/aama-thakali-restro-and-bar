@@ -26,7 +26,7 @@ const AuthModal = ({
         <h2 className="text-2xl font-serif italic text-white mb-4">
           Savor the Experience
         </h2>
-        <p className="text-gray-400 text-2xl mb-8 leading-relaxed tracking-wide">
+        <p className="text-gray-400 text-xl mb-8 leading-relaxed tracking-wide">
           To finalize your order and explore our curated flavors, please sign in
           to your Meraki Restro account.
         </p>
@@ -205,7 +205,7 @@ const MenuCard = memo(
                   disabled={isOrdering}
                   className="btn-secondary px-6 py-2 label-2 uppercase tracking-widest border border-[#c19977] text-black font-bold hover:bg-black hover:text-white transition-all disabled:opacity-50"
                 >
-                  {isOrdering ? "..." : "Order"}
+                  {isOrdering ? "Ordering" : "Order"}
                 </button>
               </div>
             </div>
@@ -337,7 +337,7 @@ export const Menu = memo(() => {
         ))}
 
         <p className="menu-text text-center" style={{ marginTop: "80px" }}>
-          Daily from <span className="span">9:00 am</span> to{" "}
+          Daily from <span className="span">7:00 am</span> to{" "}
           <span className="span">10:00 pm</span>
         </p>
 

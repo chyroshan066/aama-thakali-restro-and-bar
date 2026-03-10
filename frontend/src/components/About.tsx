@@ -52,7 +52,7 @@ export const About = memo(() => {
                     </p>
                     <h2 className="headline-1 section-title">Where Passion Meets the Plate</h2>
                     <p className="section-text">
-                        Finding the perfect restaurant in Thamel means looking for more than just a menu; it&apos;s about finding a vibe that resonates. Meraki Restro, Restro & Bar was born from the Greek concept of Meraki—doing something with soul, creativity, and love. Located at the bustling Narsingh Chowk Marg, we have quickly become a destination for those seeking the best restaurant in Kathmandu for authentic international flavors and a sophisticated atmosphere.
+                        Finding the perfect restaurant in Thamel means looking for more than just a menu; it&apos;s about finding a vibe that resonates. Meraki Restro, Restro & Bar was born from the Greek concept of Meraki—doing something with soul, creativity, and love. Located at the bustling Narsingh Chowk, Thamel, we have quickly become a destination for those seeking the best restaurant in Kathmandu for authentic international flavors and a sophisticated atmosphere.
                     </p>
                     <p className="section-text">
                         While the streets of Thamel offer endless options, Meraki stands out as a premier Turkish restaurant in Kathmandu. Our kitchen is a bridge between cultures, specializing in authentic Turkish dishes that bring the spice markets of Istanbul to your plate.

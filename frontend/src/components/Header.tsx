@@ -112,7 +112,7 @@ export const Header = memo(() => {
               src="/images/logo.webp"
               width={160}
               height={50}
-              alt="Gurung BBQ - Home"
+              alt="Meraki Restro - Home"
             />
           </a>
 
@@ -131,7 +131,7 @@ export const Header = memo(() => {
                 src="/images/logo.webp"
                 width="160"
                 height="50"
-                alt="Gurung BBQ - Home"
+                alt="Meraki Restro - Home"
               />
             </a>
 
@@ -150,7 +150,7 @@ export const Header = memo(() => {
             <div className="text-center">
               <p className="headline-1 navbar-title">Visit Us</p>
               <address className="body-4">
-                Narsingh Chowk Marg, <br />
+                Narsingh Chowk, Thamel, <br />
                 Kathmandu, Nepal
               </address>
               <p className="body-4 navbar-text">Open: 7.00 am - 10.00pm</p>

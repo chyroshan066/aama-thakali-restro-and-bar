@@ -140,7 +140,7 @@ export default function SubscribersPage() {
           )}
           
           <footer className="mt-24 text-center">
-              <p className="text-[9px] uppercase tracking-[0.6em] text-gray-800">Precision • Connectivity • Gurung BBQ</p>
+              <p className="text-[9px] uppercase tracking-[0.6em] text-gray-800">Precision • Connectivity • Meraki Restro</p>
           </footer>
         </div>
       </main>

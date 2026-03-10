@@ -78,8 +78,8 @@ interface MenuStructuredData {
 export const restaurantStructuredData: RestaurantStructuredData = {
   "@context": "https://schema.org",  //"@context" field tells search engines what vocabulary/language you're using to describe your data.
   "@type": "Restaurant",
-  "name": "Gurung BBQ", 
-  "description": "Experience authentic Nepali BBQ at Gurung BBQ. Savor traditional grilled meats, momos, and Himalayan flavors in a warm, welcoming atmosphere. Fresh ingredients, bold spices, and time-honored recipes.", 
+  "name": "Meraki Restro", 
+  "description": "Experience authentic Nepali BBQ at Meraki Restro. Savor traditional grilled meats, momos, and Himalayan flavors in a warm, welcoming atmosphere. Fresh ingredients, bold spices, and time-honored recipes.", 
   "url": process.env.NEXT_PUBLIC_BASE_URL,
   
   "address": {
@@ -95,7 +95,7 @@ export const restaurantStructuredData: RestaurantStructuredData = {
   "email": "gurunghotkitchen123@gmail.com",
   
   "openingHours": [
-    "Mo-Su 9:00-22:00",
+    "Mo-Su 7:00-22:00",
   ],
   
   "servesCuisine": ["Nepali", "Asian", "Barbecue"],

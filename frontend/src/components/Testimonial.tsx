@@ -10,7 +10,7 @@ export const Testimonial = memo(() => (
         <div className="custom-container">
             <div className="quote">”</div>
             <p className="headline-2 testi-text">
-                One of the finest place in dharan especially for pork bbq.. good food and nice ambience. Enough place for group gatherings.
+                One of the best taste restaurants in Kathmandu and Patan with reasonable price and portion.
             </p>
             <div className="wrapper">
 
@@ -25,15 +25,15 @@ export const Testimonial = memo(() => (
             <div className="profile">
 
                 <Image
-                    src="/images/testimonials/t1.webp"
+                    src="/images/testimonials/t1.png"
                     width={100}
                     height={100}
                     loading="lazy"
-                    alt="Akash Prajapati"
+                    alt="Sheng Fei Chien - Customer"
                     className="img"
                 />
 
-                <p className="label-2 profile-name">Akash Prajapati</p>
+                <p className="label-2 profile-name">Sheng Fei Chien</p>
             </div>
         </div>
     </section>

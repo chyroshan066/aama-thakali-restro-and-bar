@@ -219,6 +219,6 @@ This project is proprietary software developed specifically for The Meraki Restr
 
 ---
 
-**Built with ❤️ for Gurung BBQ**
+**Built with ❤️ for Meraki Restro**
 
 *For any questions or support regarding this website, contact **[chyroshan066](https://github.com/chyroshan066)**.*

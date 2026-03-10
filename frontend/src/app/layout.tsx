@@ -36,9 +36,9 @@ const dm_sans = localFont({
 
 export const metadata: Metadata = {
   title: "The Meraki Restro Restaurant & Bar - Authentic Nepali Restaurant",
-  description: "Experience authentic Nepali BBQ at Gurung BBQ. Savor traditional grilled meats, momos, and Himalayan flavors in a warm, welcoming atmosphere. Fresh ingredients, bold spices, and time-honored recipes.",
+  description: "Experience authentic Nepali BBQ at Meraki Restro. Savor traditional grilled meats, momos, and Himalayan flavors in a warm, welcoming atmosphere. Fresh ingredients, bold spices, and time-honored recipes.",
   keywords: [
-    "Gurung BBQ",
+    "Meraki Restro",
     "Nepali restaurant",
     "BBQ restaurant",
     "Himalayan cuisine",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     "Dharan dining",
     "restaurant near me Dharan",
     "Dharan BBQ",
-    "Gurung BBQ Dharan",
+    "Meraki Restro Dharan",
     "authentic Nepali restaurant Dharan",
     "Himalayan restaurant Dharan",
     "grilled food Dharan",
@@ -117,7 +117,7 @@ export const metadata: Metadata = {
   manifest: '/favicon_io/site.webmanifest',
   openGraph: {
     title: "The Meraki Restro Restaurant & Bar - Authentic Nepali Restaurant",
-    description: "Experience authentic Nepali BBQ at Gurung BBQ. Savor traditional grilled meats, momos, and Himalayan flavors in a warm, welcoming atmosphere. Fresh ingredients, bold spices, and time-honored recipes.",
+    description: "Experience authentic Nepali BBQ at Meraki Restro. Savor traditional grilled meats, momos, and Himalayan flavors in a warm, welcoming atmosphere. Fresh ingredients, bold spices, and time-honored recipes.",
     type: "website",
     locale: "en_US",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}`,

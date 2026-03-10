@@ -13,7 +13,7 @@ export const TESTIMONIALS: TestimonialItem[] = [
     {
         name: "Suman Koirala",
         imgSrc: "/images/testimonials/t2.webp",
-        review: "I recently had the pleasure of dining at Gurung BBQ in Dharan, and I must say, it was an unforgettable experience! The food is absolutely delicious, and the star of the show—Dharan ko Kalo Bangur ko BBQ—is nothing short of amazing.",
+        review: "I recently had the pleasure of dining at Meraki Restro in Dharan, and I must say, it was an unforgettable experience! The food is absolutely delicious, and the star of the show—Dharan ko Kalo Bangur ko BBQ—is nothing short of amazing.",
     },
     {
         name: "Raman Dhungel",

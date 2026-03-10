@@ -34,7 +34,7 @@ const AuthModal = ({
         <h2 className="text-2xl font-serif italic text-white mb-4">
           Savor the Experience
         </h2>
-        <p className="text-gray-400 text-2xl mb-8 leading-relaxed tracking-wide">
+        <p className="text-gray-400 text-xl mb-8 leading-relaxed tracking-wide">
           To finalize your order and explore our curated flavors, please sign in
           to your Meraki Restro account.
         </p>
@@ -180,148 +180,6 @@ export const Reservation = memo(() => {
   );
 
   return (
-    // <>
-    //   <Alert
-    //     type={alertState.type}
-    //     title={alertState.title}
-    //     message={alertState.message}
-    //     isVisible={alertState.isVisible}
-    //     onDismiss={hideAlert}
-    //     autoDismiss={true}
-    //     autoDismissDelay={6000}
-    //   />
-
-    //   <AuthModal
-    //     isOpen={showAuthModal}
-    //     onClose={() => setShowAuthModal(false)}
-    //   />
-
-    //   <section className="reservation" id="contact">
-    //     <div className="custom-container">
-    //       <div className="form reservation-form bg-black-10">
-    //         <form className="form-left" onSubmit={onFormSubmit} noValidate>
-    //           <h2 className="headline-1 text-center">Online Reservation</h2>
-    //           <p className="form-text text-center">
-    //             Booking request{" "}
-    //             <a href="tel:+88123123456" className="link">
-    //               +88-123-123456{" "}
-    //             </a>
-    //             or fill out the order form
-    //           </p>
-    //           <div className="input-wrapper">
-    //             <InputField
-    //               id="name"
-    //               placeholder="Your Name"
-    //               register={register("name")}
-    //               error={errors.name?.message}
-    //               disabled={isSubmitting}
-    //             />
-
-    //             <InputField
-    //               id="phone"
-    //               type="tel"
-    //               placeholder="Phone Number"
-    //               register={register("phone")}
-    //               error={errors.phone?.message}
-    //               disabled={isSubmitting}
-    //             />
-    //           </div>
-
-    //           <div className="input-wrapper">
-    //             <div className="icon-wrapper">
-    //               <IonIcon name="person-outline" />
-    //               <select {...register("person")} className="input-field">
-    //                 {[...Array(7)].map((_, index) => (
-    //                   <option key={index} value={`${index + 1}-person`}>
-    //                     {index + 1} Person
-    //                   </option>
-    //                 ))}
-    //               </select>
-    //               <ErrorMessage message={errors.person?.message} />
-    //             </div>
-
-    //             <div className="icon-wrapper">
-    //               <IonIcon name="calendar-clear-outline" aria-hidden="true"/>
-    //               <InputField
-    //                 id="date"
-    //                 type="date"
-    //                 register={register("date")}
-    //                 error={errors.date?.message}
-    //                 disabled={isSubmitting}
-    //               />
-    //             </div>
-
-    //             <div className="icon-wrapper">
-    //               <IonIcon name="time-outline" />
-    //               <select {...register("time")} className="input-field">
-    //                 {[...Array(3)].map((_, index) => (
-    //                   <option key={index} value={`${10 + index}:00am`}>
-    //                     {10 + index}:00 am
-    //                   </option>
-    //                 ))}
-    //                 {[...Array(10)].map((_, index) => (
-    //                   <option
-    //                     key={index}
-    //                     value={`${index < 9 ? `0${1 + index}` : 1 + index}:00pm`}
-    //                   >
-    //                     {index < 9 ? `0${1 + index}` : 1 + index}:00 pm
-    //                   </option>
-    //                 ))}
-    //               </select>
-    //               <ErrorMessage message={errors.time?.message} />
-    //             </div>
-    //           </div>
-
-    //           <InputField
-    //             id="message"
-    //             placeholder="Message"
-    //             register={register("message")}
-    //             isTextarea={true}
-    //             error={errors.message?.message}
-    //             disabled={isSubmitting}
-    //           />
-
-    //           <SubmitButton
-    //             isButtonDisabled={isButtonDisabled}
-    //             btnText={buttonText}
-    //           />
-    //         </form>
-
-    //         {/* FORM RIGHT - Visual Contact Section */}
-    //         <div
-    //           className="form-right text-center"
-    //           style={
-    //             {
-    //               backgroundImage: "url('/images/form-pattern.webp')",
-    //             } as React.CSSProperties
-    //           }
-    //         >
-    //           <h2 className="headline-1 text-center">Contact Us</h2>
-    //           <p className="contact-label">Booking Request</p>
-    //           <a
-    //             href="tel:+88123123456"
-    //             className="body-1 contact-number hover-underline"
-    //           >
-    //             +977-25-570068
-    //           </a>
-    //           <div className="separator"></div>
-    //           <p className="contact-label">Location</p>
-    //           <address className="body-4">
-    //             Ganeshman Chowk, <br />
-    //             Dharan, Nepal
-    //           </address>
-    //           <p className="contact-label">Daily</p>
-    //           <p className="body-4">
-    //             Monday to Sunday <br />
-    //             9.00 am - 10.00pm
-    //           </p>
-    //         </div>
-
-    //       </div>
-    //     </div>
-    //   </section>
-    // </>
-
     <>
       <Alert
         type={alertState.type}
@@ -331,7 +189,7 @@ export const Reservation = memo(() => {
         onDismiss={hideAlert}
         autoDismiss={true}
         autoDismissDelay={6000}
-        className="sm:max-w-md" /* Added from Code 1 */
+        className="sm:max-w-md"
       />
 
       <AuthModal
@@ -341,7 +199,6 @@ export const Reservation = memo(() => {
 
       <section className="reservation" aria-label="contact-label" id="contact">
         {" "}
-        {/* Aria-label from Code 1 */}
         <div className="custom-container">
           <div className="form reservation-form bg-black-10">
             <form
@@ -352,14 +209,13 @@ export const Reservation = memo(() => {
               <h2 className="headline-1 text-center">Online Reservation</h2>
               <p className="form-text text-center">
                 Booking request{" "}
-                <a href="tel:+88123123456" className="link">
-                  +88-123-123456{" "}
+                <a href="tel:+977-9806658055" className="link">
+                  +977-9806658055{" "}
                 </a>
                 or fill out the order form
               </p>
 
               <div className="input-wrapper">
-                {/* Spacing wrappers from Code 1 */}
                 <div style={{ marginBottom: "20px" }}>
                   <InputField
                     id="name"
@@ -407,7 +263,6 @@ export const Reservation = memo(() => {
                     disabled={isSubmitting}
                   />
                   <IonIcon name="chevron-down" aria-hidden="true" />{" "}
-                  {/* Dropdown icon from Code 1 */}
                 </div>
 
                 <div className="icon-wrapper">
@@ -429,13 +284,11 @@ export const Reservation = memo(() => {
                   </select>
                   <ErrorMessage message={errors.time?.message} />
                   <IonIcon name="chevron-down" aria-hidden="true" />{" "}
-                  {/* Dropdown icon from Code 1 */}
                 </div>
               </div>
 
               <div style={{ marginBottom: "20px" }}>
                 {" "}
-                {/* Spacing wrapper from Code 1 */}
                 <InputField
                   id="message"
                   placeholder="Message"
@@ -463,7 +316,7 @@ export const Reservation = memo(() => {
               <h2 className="headline-1 text-center">Contact Us</h2>
               <p className="contact-label">Booking Request</p>
               <a
-                href="tel:+97725570068"
+                href="tel:+977-9806658055"
                 className="body-1 contact-number hover-underline"
               >
                 +977-9806658055
@@ -471,11 +324,11 @@ export const Reservation = memo(() => {
               <div className="separator"></div>
               <p className="contact-label">Location</p>
               <address className="body-4">
-                Ganeshman Chowk, <br /> Dharan, Nepal
+                Narsingh Chowk, Thamel, <br /> Kathmandu, Nepal
               </address>
               <p className="contact-label">Daily</p>
               <p className="body-4">
-                Monday to Sunday <br /> 9.00 am - 10.00pm
+                Monday to Sunday <br /> 7.00 am - 10.00pm
               </p>
             </div>
           </div>
