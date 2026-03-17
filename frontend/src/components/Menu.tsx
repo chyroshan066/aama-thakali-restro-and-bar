@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { memo, useEffect, useState, useCallback, useMemo } from "react";
+import { CATEGORY_PRIORITY } from "@/constants/menuConfig";
 import { Alert } from "./Alert";
 import { AlertState } from "@/types";
+
 
 interface BackendMenuType {
   id: number;
@@ -16,7 +18,7 @@ interface BackendMenuType {
   badge?: string;
 }
 
-// --- AUTH MODAL (Restored to your exact design) ---
+// --- AUTH MODAL ---
 const AuthModal = ({
   isOpen,
   onClose,
@@ -59,6 +61,7 @@ const AuthModal = ({
   );
 };
 
+// --- MENU CARD ---
 // --- MENU CARD (Restored with your hover effects and layout) ---
 const MenuCard = memo(
   ({
@@ -245,7 +248,7 @@ const MenuCard = memo(
 );
 MenuCard.displayName = "MenuCard";
 
-// --- MENU CATEGORY (Restored with your specific button design) ---
+// --- MENU CATEGORY ---
 const MenuCategory = memo(
   ({
     title,
@@ -279,7 +282,7 @@ const MenuCategory = memo(
 
         {arr.length > LIMIT && (
           <button
-            className="btn btn-primary mt-30 mx-auto"
+            className="btn btn-primary mt-[30px] mx-auto"
             onClick={() => setIsExpanded(!isExpanded)}
           >
             <span className="text text-1">
@@ -296,7 +299,7 @@ const MenuCategory = memo(
 );
 MenuCategory.displayName = "MenuCategory";
 
-// --- MAIN MENU (Logic for One-Time Fetching + Content De-duplication) ---
+// --- MAIN MENU ---
 export const Menu = memo(() => {
   const [menuList, setMenuList] = useState<BackendMenuType[]>([]);
   const [loading, setLoading] = useState(true);
@@ -304,13 +307,11 @@ export const Menu = memo(() => {
   const fetchMenu = useCallback(async () => {
     try {
       setLoading(true);
-      // Fetching everything in one go (limit 500) to stop the duplication shuffle
       const res = await fetch(
         `https://meraki-cafe-restaurant-and-bar-one.vercel.app/api/menu?page=1&limit=500`
       );
       const json = await res.json();
       const items = json.data || [];
-
       setMenuList(items);
     } catch (err) {
       console.error("Failed to fetch menu:", err);
@@ -323,35 +324,49 @@ export const Menu = memo(() => {
     fetchMenu();
   }, [fetchMenu]);
 
-  // STABLE GROUPING: This ensures no items repeat and categories stay sorted
+// Inside the Menu component, replace your sortedCategories useMemo:
+// STABLE GROUPING + CUSTOM CATEGORY ORDERING
   const sortedCategories = useMemo(() => {
     const groups: Record<string, BackendMenuType[]> = {};
     const seenNamesPerCategory: Record<string, Set<string>> = {};
 
     menuList.forEach((item) => {
-      // 1. Normalize Category
-      const rawCat = item.category?.trim() || "General";
-      const cat = rawCat.charAt(0).toUpperCase() + rawCat.slice(1).toLowerCase();
-
-      // 2. Normalize Item Name
+      // 1. Keep the original casing from the database for display
+      const displayCat = item.category?.trim() || "General";
       const itemName = item.name.trim().toLowerCase();
 
-      if (!groups[cat]) {
-        groups[cat] = [];
-        seenNamesPerCategory[cat] = new Set();
+      if (!groups[displayCat]) {
+        groups[displayCat] = [];
+        seenNamesPerCategory[displayCat] = new Set();
       }
 
-      // 3. De-duplication logic (Both ID and Name)
+      // De-duplication logic
       if (
-        !groups[cat].some((i) => i.id === item.id) &&
-        !seenNamesPerCategory[cat].has(itemName)
+        !groups[displayCat].some((i) => i.id === item.id) &&
+        !seenNamesPerCategory[displayCat].has(itemName)
       ) {
-        groups[cat].push(item);
-        seenNamesPerCategory[cat].add(itemName);
+        groups[displayCat].push(item);
+        seenNamesPerCategory[displayCat].add(itemName);
       }
     });
 
-    return Object.entries(groups).sort(([a], [b]) => a.localeCompare(b));
+    // 2. Sort using your CATEGORY_PRIORITY list from menuConfig.ts
+    return Object.entries(groups).sort(([a], [b]) => {
+      // We compare using toLowerCase() only for matching, 
+      // so "Meraki Special" matches "meraki special" in your config
+      const indexA = CATEGORY_PRIORITY.findIndex(
+        (cat) => cat.toLowerCase() === a.toLowerCase()
+      );
+      const indexB = CATEGORY_PRIORITY.findIndex(
+        (cat) => cat.toLowerCase() === b.toLowerCase()
+      );
+
+      if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+      if (indexA !== -1) return -1;
+      if (indexB !== -1) return 1;
+
+      return a.localeCompare(b);
+    });
   }, [menuList]);
 
   if (loading && menuList.length === 0) {
@@ -365,6 +380,7 @@ export const Menu = memo(() => {
   return (
     <section className="section menu" aria-label="menu-label" id="menu">
       <div className="custom-container">
+        <p className="section-subtitle text-center label-2">Special Selection</p>
         {sortedCategories.map(([category, items]) => (
           <MenuCategory
             key={category}
