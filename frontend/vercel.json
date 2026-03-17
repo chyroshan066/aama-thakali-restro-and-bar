@@ -5,7 +5,7 @@
       "has": [
         {
           "type": "host",
-          "value": "gurungbbq.com"
+          "value": "merakirestro.com"
         },
         {
           "type": "header",
@@ -13,7 +13,7 @@
           "value": "http"
         }
       ],
-      "destination": "https://www.gurungbbq.com/:path*",
+      "destination": "https://www.merakirestro.com/:path*",
       "permanent": true
     },
     {
@@ -21,7 +21,7 @@
       "has": [
         {
           "type": "host",
-          "value": "www.gurungbbq.com"
+          "value": "www.merakirestro.com"
         },
         {
           "type": "header",
@@ -29,7 +29,7 @@
           "value": "http"
         }
       ],
-      "destination": "https://www.gurungbbq.com/:path*",
+      "destination": "https://www.merakirestro.com/:path*",
       "permanent": true
     }
   ]
