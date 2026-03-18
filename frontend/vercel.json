@@ -1,15 +1,22 @@
 {
   "redirects": [
     {
-      "source": "/((?!dashboard).*)",
+      "source": "/((?!dashboard|api).*)",
       "has": [
-        { "type": "host", "value": "merakirestro.com" }
+        {
+          "type": "host",
+          "value": "merakirestro.com"
+        }
       ],
       "destination": "https://www.merakirestro.com/$1",
       "permanent": true
     }
   ],
   "rewrites": [
+    {
+      "source": "/dashboard",
+      "destination": "https://meraki-cafe-restaurant-and-bar-dun.vercel.app/dashboard"
+    },
     {
       "source": "/dashboard/:path*",
       "destination": "https://meraki-cafe-restaurant-and-bar-dun.vercel.app/dashboard/:path*"
