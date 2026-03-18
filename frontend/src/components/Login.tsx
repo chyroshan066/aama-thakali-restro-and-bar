@@ -11,8 +11,7 @@ interface User {
   role?: string; 
 }
 
-const ADMIN_DASHBOARD_URL = "https://meraki-cafe-restaurant-and-bar-dun.vercel.app";
-
+const ADMIN_DASHBOARD_URL = "https://merakirestro.com/dashboard"; 
 export default function Login() {
   const router = useRouter();
   const menuRef = useRef<HTMLDivElement>(null);
