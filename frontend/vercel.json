@@ -19,10 +19,10 @@
       "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/dashboard/:path*",
-      "destination": "https://meraki-cafe-restaurant-and-bar-dun.vercel.app/:path*"
-    }
-  ]
+"rewrites": [
+  {
+    "source": "/dashboard/:path*",
+    "destination": "https://meraki-cafe-restaurant-and-bar-dun.vercel.app/dashboard/:path*"
+  }
+]
 }
