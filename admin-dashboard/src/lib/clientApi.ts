@@ -3,7 +3,7 @@
 const DEFAULT_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL ?? 'https://meraki-cafe-restaurant-and-bar-one.vercel.app/api';
 
-const TOKEN_KEY = 'meraki_admin_token';
+const TOKEN_KEY = 'token';
 const USER_KEY = 'meraki_admin_user';
 
 export function getStoredToken(): string | null {
