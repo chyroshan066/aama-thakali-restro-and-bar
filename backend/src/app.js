@@ -18,9 +18,9 @@ const { notFoundHandler, errorHandler } = require('./middleware/errorMiddleware'
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:3000",
-  "https://meraki-cafe-restaurant-and-bar.vercel.app",
+  "http://localhost:3000/dashboard",
   "https://www.merakirestro.com",
+  "https://www.merakirestro.com/dashboard",
   "https://meraki-cafe-restaurant-and-bar-dun.vercel.app"
 ];
 
