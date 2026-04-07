@@ -142,7 +142,7 @@ export const Footer = memo(() => {
               <a href="#" className="logo flex justify-center">
                 <Image
                   src="/images/logo.webp"
-                  width={160}
+                  width={90}
                   height={50}
                   loading="lazy"
                   alt="Meraki Restro Home"

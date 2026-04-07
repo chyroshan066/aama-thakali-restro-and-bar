@@ -110,7 +110,7 @@ export const Header = memo(() => {
           <a href="#" className="logo">
             <Image
               src="/images/logo.webp"
-              width={160}
+              width={70}
               height={50}
               alt="Meraki Restro - Home"
             />
@@ -129,7 +129,7 @@ export const Header = memo(() => {
             <a href="#" className="logo">
               <Image
                 src="/images/logo.webp"
-                width="160"
+                width="90"
                 height="50"
                 alt="Meraki Restro - Home"
               />
