@@ -52,20 +52,20 @@ export const About = memo(() => {
                     </p>
                     <h2 className="headline-1 section-title">Where Passion Meets the Plate</h2>
                     <p className="section-text">
-                        Finding the perfect restaurant in Thamel means looking for more than just a menu; it&apos;s about finding a vibe that resonates. Meraki Restro, Restro & Bar was born from the Greek concept of Meraki—doing something with soul, creativity, and love. Located at the bustling Narsingh Chowk, Thamel, we have quickly become a destination for those seeking the best restaurant in Kathmandu for authentic international flavors and a sophisticated atmosphere.
+                        Finding the perfect restaurant in Kathmandu means looking for more than just a menu; it&apos;s about discovering a place with authentic flavors, warm hospitality, and a welcoming vibe. Aama Thakali Restro & Bar was created with the spirit of traditional Nepali hospitality—serving delicious food with care, passion, and authenticity. Located at the vibrant Boudha Gate No. 2, Kathmandu, we have quickly become a favorite destination for locals and visitors searching for the best restaurant in Kathmandu for rich Indian flavors, great ambience, and memorable dining experiences.
                     </p>
                     <p className="section-text">
-                        While the streets of Thamel offer endless options, Meraki stands out as a premier Turkish restaurant in Kathmandu. Our kitchen is a bridge between cultures, specializing in authentic Turkish dishes that bring the spice markets of Istanbul to your plate.
+                        While Kathmandu offers countless dining spots, Aama Thakali Restro & Bar stands out as a popular Indian restaurant in Kathmandu where taste meets tradition. Our kitchen celebrates the bold spices and timeless recipes of Indian cuisine, bringing the vibrant flavors of the subcontinent straight to your table.
                     </p>
                     <p className="section-text">
-                        From our signature succulent Kebabs and freshly baked Turkish Pide to the rich, honeyed layers of our traditional Baklava, every recipe is prepared with the "Meraki" touch. Whether you are searching for a hearty Turkish breakfast to start your day or a late-night Restro & Bar experience with curated cocktails, we offer a sanctuary away from the city&apos;s hustle.
+                        From our signature aromatic curries and flavorful tandoori specialties to freshly prepared breads and comforting Thakali-style dishes, every plate is crafted with care. Whether you are looking for a satisfying meal at a restaurant in Kathmandu or a relaxed evening at a bar in Kathmandu with refreshing drinks and great company, Aama Thakali Restro & Bar offers the perfect place to enjoy food, drinks, and the lively energy of the city.
                     </p>
                     <div className="contact-label">Book Through Call</div>
                     <a
-                        href="tel:+9779806658055"
+                        href="tel:+9779860301835"
                         className="body-1 contact-number hover-underline"
                     >
-                        +977 9806658055
+                        +977 9860301835
                     </a>
 
                 </div>

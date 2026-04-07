@@ -27,7 +27,7 @@ export function Sidebar() {
       <div className="mb-16">
         <div className="flex flex-col group cursor-default">
           <h2 className="font-serif italic text-3xl tracking-tight text-white group-hover:text-[#c19977] transition-colors duration-500">
-            Meraki Restro
+            Aama Thakali
           </h2>
           <div className="flex items-center gap-3 mt-2">
             <span className="h-[1px] w-6 bg-[#c19977]/40 transition-all duration-500 group-hover:w-10 group-hover:bg-[#c19977]"></span>

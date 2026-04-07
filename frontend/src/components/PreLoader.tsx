@@ -37,7 +37,7 @@ export const PreLoader = memo(({
             onTransitionEnd={handleTransitionEnd}
         >
             <div className="circle"></div>
-            <p className="text">Meraki Restro</p>
+            <p className="text">Aama Thakali</p>
         </div>
     );
 });

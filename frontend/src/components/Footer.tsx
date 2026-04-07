@@ -19,11 +19,11 @@ import { onSubscriptionSubmit } from "@/utils/subscriptionData";
 const SOCIAL_LINKS: Link[] = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=61558001254433",
+    href: "https://www.facebook.com/aamathakali02/",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/merakicafe.ktm/",
+    href: "https://www.instagram.com/ama.sonam_thakali_restro/",
   },
 ];
 
@@ -150,15 +150,15 @@ export const Footer = memo(() => {
               </a>
 
               <address className="body-4">
-                Narsingh Chowk, Thamel, Kathmandu, Nepal
+                Boudha Gate No. 2, Kathmandu, Nepal
               </address>
               <a href="#contact" className="body-4 contact-link">
-                merakicafe04@gmail.com
+                aamathakali@gmail.com
               </a>
-              <a href="tel:+977-9806658055" className="body-4 contact-link">
-                Booking Request : +977-9806658055
+              <a href="tel:+9779860301835" className="body-4 contact-link">
+                Booking Request : +977-9860301835
               </a>
-              <p className="body-4">Open : 07:00 am - 10:00 pm</p>
+              <p className="body-4">Open : 08:00 am - 9:30 pm</p>
 
               <div className="wrapper">
                 {[...Array(3)].map((_, index) => (
@@ -225,7 +225,7 @@ export const Footer = memo(() => {
           </div>
           <div className="footer-bottom">
             <p className="copyright">
-              &copy; 2026 Meraki Restro. All Rights Reserved | Crafted by{" "}
+              &copy; {new Date().getFullYear()} Aama Thakali Restro & Bar. All Rights Reserved | Crafted by{" "}
               <a
                 href="https://github.com/chyroshan066"
                 target="_blank"

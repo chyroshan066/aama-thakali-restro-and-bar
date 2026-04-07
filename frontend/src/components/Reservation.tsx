@@ -62,7 +62,7 @@ const initialValues: ReservationFormData = {
   phone: "",
   person: "1-person",
   date: "",
-  time: "10:00am",
+  time: "08:00am",
   message: "",
 };
 
@@ -209,8 +209,8 @@ export const Reservation = memo(() => {
               <h2 className="headline-1 text-center">Online Reservation</h2>
               <p className="form-text text-center">
                 Booking request{" "}
-                <a href="tel:+977-9806658055" className="link">
-                  +977-9806658055{" "}
+                <a href="tel:+977-9860301835" className="link">
+                  +977-9860301835{" "}
                 </a>
                 or fill out the order form
               </p>
@@ -268,9 +268,9 @@ export const Reservation = memo(() => {
                 <div className="icon-wrapper">
                   <IonIcon name="time-outline" aria-hidden="true" />
                   <select {...register("time")} className="input-field">
-                    {[...Array(3)].map((_, index) => (
-                      <option key={index} value={`${10 + index}:00am`}>
-                        {10 + index} : 00 am
+                    {[...Array(5)].map((_, index) => (
+                      <option key={index} value={`${index < 2 ? `0${8 + index}` : 8 + index}:00am`}>
+                        {index < 2 ? `0${8 + index}` : 8 + index} : 00 am
                       </option>
                     ))}
                     {[...Array(10)].map((_, index) => (
@@ -316,19 +316,19 @@ export const Reservation = memo(() => {
               <h2 className="headline-1 text-center">Contact Us</h2>
               <p className="contact-label">Booking Request</p>
               <a
-                href="tel:+977-9806658055"
+                href="tel:+977-9860301835"
                 className="body-1 contact-number hover-underline"
               >
-                +977-9806658055
+                +977-9860301835
               </a>
               <div className="separator"></div>
               <p className="contact-label">Location</p>
               <address className="body-4">
-                Narsingh Chowk, Thamel, <br /> Kathmandu, Nepal
+                Boudha Gate No. 2, <br /> Kathmandu, Nepal
               </address>
               <p className="contact-label">Daily</p>
               <p className="body-4">
-                Monday to Sunday <br /> 7.00 am - 10.00pm
+                Monday to Sunday <br /> 8.00 am - 9.30pm
               </p>
             </div>
           </div>
