@@ -31,8 +31,8 @@ const AuthModal = ({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 backdrop-blur-md bg-black/70 animate-in fade-in duration-300">
       <div className="relative w-full max-w-sm bg-[#0d0d0d] border border-white/10 p-8 text-center shadow-2xl rounded-sm">
-        <div className="w-12 h-[1px] bg-[#c19977] mx-auto mb-6 opacity-50"></div>
-        <p className="text-[#c19977] uppercase tracking-[0.4em] text-[10px] mb-3">
+        <div className="w-12 h-[1px] bg-[#791B1B] mx-auto mb-6 opacity-50"></div>
+        <p className="text-[#791B1B] uppercase tracking-[0.4em] text-[10px] mb-3">
           Login Required
         </p>
         <h2 className="text-2xl font-serif italic text-white mb-4">
@@ -45,7 +45,7 @@ const AuthModal = ({
         <div className="space-y-3">
           <Link
             href="/login"
-            className="block w-full bg-[#c19977] py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-black hover:bg-black hover:text-white border hover:border-[#c19977] hover:border-width-[2px] transition-all shadow-lg active:scale-[0.98]"
+            className="block w-full bg-[#791B1B] py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-black hover:bg-black hover:text-white border hover:border-[#791B1B] hover:border-width-[2px] transition-all shadow-lg active:scale-[0.98]"
           >
             Authorize Access
           </Link>
@@ -182,15 +182,14 @@ const MenuCard = memo(
               {description && (
                 <div className="mt-1">
                   <p
-                    className={`card-text label-1 opacity-60 transition-all duration-300 ${
-                      isExpanded ? "" : "line-clamp-1"
-                    }`}
+                    className={`card-text label-1 opacity-60 transition-all duration-300 ${isExpanded ? "" : "line-clamp-1"
+                      }`}
                   >
                     {description}
                   </p>
                   <button
                     onClick={() => setIsExpanded(!isExpanded)}
-                    className="text-[#c19977] text-[9px] uppercase tracking-widest mt-1 hover:underline focus:outline-none"
+                    className="text-[#791B1B] text-[9px] uppercase tracking-widest mt-1 hover:underline focus:outline-none"
                   >
                     {isExpanded ? "Show Less" : "Read More"}
                   </button>
@@ -201,7 +200,7 @@ const MenuCard = memo(
                 <div className="flex items-center gap-3 border border-white/10 rounded-sm px-2 py-1">
                   <button
                     onClick={() => setQuantity((q) => (q > 1 ? q - 1 : 1))}
-                    className="text-[#c19977] font-bold px-2 hover:scale-125 transition-transform"
+                    className="text-[#791B1B] font-bold px-2 hover:scale-125 transition-transform"
                   >
                     -
                   </button>
@@ -210,7 +209,7 @@ const MenuCard = memo(
                   </span>
                   <button
                     onClick={() => setQuantity((q) => q + 1)}
-                    className="text-[#c19977] font-bold px-2 hover:scale-125 transition-transform"
+                    className="text-[#791B1B] font-bold px-2 hover:scale-125 transition-transform"
                   >
                     +
                   </button>
@@ -219,7 +218,7 @@ const MenuCard = memo(
                 <button
                   onClick={handleOrder}
                   disabled={isOrdering}
-                  className="btn-secondary px-6 py-2 label-2 uppercase tracking-widest border border-[#c19977] text-black font-bold hover:bg-black hover:text-white transition-all disabled:opacity-50"
+                  className="btn-secondary px-6 py-2 label-2 uppercase tracking-widest border border-[#791B1B] text-black font-bold hover:bg-black hover:text-white transition-all disabled:opacity-50"
                 >
                   {isOrdering ? "Ordering" : "Order"}
                 </button>
@@ -324,8 +323,8 @@ export const Menu = memo(() => {
     fetchMenu();
   }, [fetchMenu]);
 
-// Inside the Menu component, replace your sortedCategories useMemo:
-// STABLE GROUPING + CUSTOM CATEGORY ORDERING
+  // Inside the Menu component, replace your sortedCategories useMemo:
+  // STABLE GROUPING + CUSTOM CATEGORY ORDERING
   const sortedCategories = useMemo(() => {
     const groups: Record<string, BackendMenuType[]> = {};
     const seenNamesPerCategory: Record<string, Set<string>> = {};

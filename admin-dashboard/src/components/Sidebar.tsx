@@ -26,7 +26,7 @@ export function Sidebar() {
       {/* Brand Identity Section */}
       <div className="mb-16">
         <div className="flex flex-col group cursor-default">
-          <h2 className="font-serif italic text-3xl tracking-tight text-white group-hover:text-[#c19977] transition-colors duration-500">
+          <h2 className="font-serif italic text-3xl tracking-tight text-white group-hover:text-[#791B1B] transition-colors duration-500">
             Aama Thakali
           </h2>
           <div className="flex items-center gap-3 mt-2">
@@ -49,23 +49,22 @@ export function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`group flex items-center justify-between px-3 py-4 text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-500 rounded-sm relative overflow-hidden ${
-                isActive
+              className={`group flex items-center justify-between px-3 py-4 text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-500 rounded-sm relative overflow-hidden ${isActive
                   ? "text-[#791B1B]"
                   : "text-gray-500 hover:text-white hover:bg-white/[0.02]"
-              }`}
+                }`}
             >
               <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-1">
                 {item.label}
               </span>
-              
+
               {isActive && (
                 <div className="flex items-center gap-2 relative z-10">
-                   {/* Gold Glow Indicator */}
-                   <span className="h-1 w-1 rounded-full bg-[#791B1B] shadow-[0_0_10px_#791B1B]"></span>
+                  {/* Gold Glow Indicator */}
+                  <span className="h-1 w-1 rounded-full bg-[#791B1B] shadow-[0_0_10px_#791B1B]"></span>
                 </div>
               )}
-              
+
               {/* Active Background Slide */}
               {isActive && (
                 <div className="absolute inset-0 bg-gradient-to-r from-[#791B1B]/5 to-transparent pointer-events-none"></div>
@@ -87,9 +86,9 @@ export function Sidebar() {
           </p>
         </div>
         <div className="mt-6 px-3">
-            <p className="text-[8px] uppercase tracking-[0.2em] text-gray-800 italic">
-                Kathmandu, NP
-            </p>
+          <p className="text-[8px] uppercase tracking-[0.2em] text-gray-800 italic">
+            Kathmandu, NP
+          </p>
         </div>
       </div>
     </aside>

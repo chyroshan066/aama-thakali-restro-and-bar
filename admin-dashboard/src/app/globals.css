@@ -16,31 +16,31 @@ body {
 
   .flex-center { @apply flex items-center justify-center;}
   .flex-col-center { @apply flex flex-col items-center justify-center;}
-  .registry-container { @apply flex min-h-screen selection:bg-[#c19977]/30;}
+  .registry-container { @apply flex min-h-screen selection:bg-[#791B1B]/30;}
 
-  .text-h2 { @apply text-[10px] uppercase tracking-[0.5em] font-semibold text-[#c19977] mb-2;}
-  .registry-label { @apply text-[9px] uppercase tracking-[0.2em] text-[#c19977] font-bold;}
-  .registry-field { @apply w-full border-b border-white/10 bg-transparent text-sm text-white outline-none focus:border-[#c19977] transition-all;}
+  .text-h2 { @apply text-[10px] uppercase tracking-[0.5em] font-semibold text-[#791B1B] mb-2;}
+  .registry-label { @apply text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold;}
+  .registry-field { @apply w-full border-b border-white/10 bg-transparent text-sm text-white outline-none focus:border-[#791B1B] transition-all;}
   .registry-title { @apply text-4xl font-serif italic tracking-tight text-white;}
   .registry-tr { @apply px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold hover:bg-white/[0.02] transition-colors;}
   .simple-para { @apply text-[10px] uppercase tracking-[0.5em] text-gray-700;}
 
   .registry-th { @apply  border-b border-white/10 bg-white/[0.01];}
-  .registry-hr { @apply mt-4 h-[1px] w-24 bg-gradient-to-r from-[#c19977] to-transparent;}
+  .registry-hr { @apply mt-4 h-[1px] w-24 bg-gradient-to-r from-[#791B1B] to-transparent;}
   .registry-table-wrapper { @apply overflow-x-auto border border-white/[0.05] bg-zinc-950/20 backdrop-blur-sm;}
   .registry-table { @apply min-w-full text-left border-collapse;}
   .search-input {
     @apply w-full bg-zinc-900/50 border border-white/10 px-4 py-2.5 text-xs text-white;
-    @apply focus:outline-none focus:border-[#c19977]/50 transition-all placeholder:text-gray-600 font-light;
+    @apply focus:outline-none focus:border-[#791B1B]/50 transition-all placeholder:text-gray-600 font-light;
   }
 
-  .search-underline { @apply absolute bottom-0 left-0 h-[1px] w-0 bg-[#c19977] transition-all duration-300;}
+  .search-underline { @apply absolute bottom-0 left-0 h-[1px] w-0 bg-[#791B1B] transition-all duration-300;}
   /* Role Badges */
   .badge { @apply px-3 py-1 text-[9px] uppercase tracking-widest border transition-all;}
-  .badge-admin { @apply border-[#c19977] text-[#c19977] bg-[#c19977]/5;}
+  .badge-admin { @apply border-[#791B1B] text-[#791B1B] bg-[#791B1B]/5;}
   .badge-user { @apply border-white/10 text-gray-500;}
   /* Animated Loader */
-  .loader-gold { @apply inline-block h-8 w-8 animate-spin border border-[#c19977] border-t-transparent rounded-full;}
+  .loader-gold { @apply inline-block h-8 w-8 animate-spin border border-[#791B1B] border-t-transparent rounded-full;}
 }
 
 /* text-4xl font-serif italic tracking-tight text-white -> 6 */

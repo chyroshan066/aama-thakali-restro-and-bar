@@ -27,8 +27,8 @@ const AuthModal = ({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 backdrop-blur-md bg-black/70 animate-in fade-in duration-300">
       <div className="relative w-full max-w-sm bg-[#0d0d0d] border border-white/10 p-8 text-center shadow-2xl rounded-sm">
-        <div className="w-12 h-[1px] bg-[#c19977] mx-auto mb-6 opacity-50"></div>
-        <p className="text-[#c19977] uppercase tracking-[0.4em] text-[10px] mb-3">
+        <div className="w-12 h-[1px] bg-[#791B1B] mx-auto mb-6 opacity-50"></div>
+        <p className="text-[#791B1B] uppercase tracking-[0.4em] text-[10px] mb-3">
           Login Required
         </p>
         <h2 className="text-2xl font-serif italic text-white mb-4">
@@ -41,7 +41,7 @@ const AuthModal = ({
         <div className="space-y-3">
           <Link
             href="/login"
-            className="  block w-full bg-[#c19977] py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-black hover:bg-black hover:text-white border hover:border-[#c19977] hover:border-width-[2px] transition-all shadow-lg active:scale-[0.98]"
+            className="  block w-full bg-[#791B1B] py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-black hover:bg-black hover:text-white border hover:border-[#791B1B] hover:border-width-[2px] transition-all shadow-lg active:scale-[0.98]"
           >
             Authorize Access
           </Link>
