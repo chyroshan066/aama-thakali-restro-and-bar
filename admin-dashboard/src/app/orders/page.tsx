@@ -18,7 +18,7 @@ type OrdersState =
 const getStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
     case "accepted":
-      return "text-[#c19977] border-[#c19977]/30 bg-[#c19977]/5";
+      return "text-[#791B1B] border-[#791B1B]/30 bg-[#791B1B]/5";
     case "pending":
       return "text-amber-400 border-amber-500/20 bg-amber-500/5";
     case "cancelled":
@@ -68,7 +68,7 @@ export default function OrdersPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#c19977]/30">
+    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#791B1B]/30">
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
         <Topbar />
@@ -76,18 +76,18 @@ export default function OrdersPage() {
         <div className="p-6 lg:p-10">
           {/* Page Header */}
           <div className="mb-12">
-            <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#c19977] font-semibold mb-2">
+            <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#791B1B] font-semibold mb-2">
               Service Registry
             </h2>
             <h1 className="text-4xl font-serif italic tracking-tight text-white">
               Customer Orders
             </h1>
-            <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#c19977] to-transparent"></div>
+            <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#791B1B] to-transparent"></div>
           </div>
 
           {state.status === "loading" && (
             <div className="flex h-96 flex-col items-center justify-center space-y-4">
-              <div className="h-10 w-10 animate-spin border-[1px] border-[#c19977] border-t-transparent rounded-full"></div>
+              <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
               <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">
                 Synchronizing Ledger
               </p>
@@ -105,32 +105,14 @@ export default function OrdersPage() {
               <table className="min-w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/[0.01]">
-                    <th className="px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
-                      Ref. ID
-                    </th>
-                    <th className="px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
-                      Guest Identity
-                    </th>
-
-                    <th className="px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
-                      Contacts
-                    </th>
-
-                    <th className="px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
-                      Orderd Date
-                    </th>
-                    <th className="px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold">
-                      Selections
-                    </th>
-                    <th className="px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold text-center">
-                      Valuation
-                    </th>
-                    <th className="px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold text-center">
-                      Status
-                    </th>
-                    <th className="px-6 py-6 text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold text-right">
-                      Operations
-                    </th>
+                    <th className="registry-tr">Ref. ID</th>
+                    <th className="registry-tr">Guest Identity</th>
+                    <th className="registry-tr">Contacts</th>
+                    <th className="registry-tr">Orderd Date</th>
+                    <th className="registry-tr">Selections</th>
+                    <th className="registry-tr text-center">Valuation</th>
+                    <th className="registry-tr text-center">Status</th>
+                    <th className="registry-tr text-right">Operations</th>
                   </tr>
                 </thead>
 
@@ -140,32 +122,32 @@ export default function OrdersPage() {
                       key={order.id}
                       className="group transition-colors hover:bg-white/[0.02]"
                     >
-                      <td className="px-6 py-5 font-mono text-[15px] text-[#c19977]/60">
+                      <td className="px-6 py-5 font-mono text-[15px] text-[#791B1B]/60">
                         #{order.id}
                       </td>
 
                       <td className="px-6 py-5">
-                        <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">
+                        <p className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">
                           {order.customer_name ?? "Anonymous Guest"}
                         </p>
                       </td>
                       <td className="px-6 py-5">
-                        <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">
+                        <p className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">
                           {order.customer_email}
                         </p>
-                        <p className="text-[11px] font-serif italic text-[#c19977] mt-0.5">
+                        <p className="text-[11px] font-serif italic text-[#791B1B] mt-0.5">
                           {order.customer_phone ?? "No Contact"}
                         </p>
                       </td>
 
                       <td className="px-6 py-5">
-                        <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">
+                        <p className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">
                           {new Date(order.created_at).toLocaleDateString(
                             "en-GB",
                             { day: "2-digit", month: "short", year: "numeric" },
                           )}
                         </p>
-                        <p className="text-[11px] font-serif italic text-[#c19977] mt-0.5">
+                        <p className="text-[11px] font-serif italic text-[#791B1B] mt-0.5">
                           {new Date(order.created_at).toLocaleTimeString([], {
                             hour: "2-digit",
                             minute: "2-digit",
@@ -178,9 +160,9 @@ export default function OrdersPage() {
                           {order.items?.map((item: any) => (
                             <div
                               key={item.menu_id}
-                              className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors"
+                              className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors"
                             >
-                              <span className="text-[11px] font-serif font-bold italic text-[#c19977] mt-0.5">
+                              <span className="text-[11px] font-serif font-bold italic text-[#791B1B] mt-0.5">
                                 {item.quantity}×
                               </span>{" "}
                               {item.menu_name}
@@ -190,7 +172,7 @@ export default function OrdersPage() {
                       </td>
 
                       <td className="px-6 py-5 text-center font-serif italic text-white">
-                        <span className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">
+                        <span className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">
                           NPR
                         </span>
                         {Number(order.total_amount).toLocaleString()}
@@ -215,7 +197,7 @@ export default function OrdersPage() {
                                 onClick={() =>
                                   handleStatusChange(order.id, "accepted")
                                 }
-                                className="px-3 py-1.5 text-[9px] uppercase tracking-widest border border-[#c19977]/40 text-[#c19977] hover:bg-[#c19977] hover:text-black transition-all"
+                                className="px-3 py-1.5 text-[9px] uppercase tracking-widest border border-[#791B1B]/40 text-[#791B1B] hover:bg-[#791B1B] hover:text-black transition-all"
                               >
                                 Accept
                               </button>

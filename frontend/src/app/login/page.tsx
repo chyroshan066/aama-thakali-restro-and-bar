@@ -52,7 +52,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center bg-[#0a0a0a] p-6 selection:bg-[#e4c590]/30 overflow-hidden">
+    <div className="relative flex min-h-screen items-center justify-center bg-[#0a0a0a] p-6 selection:bg-[#791B1B]/30 overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a] to-[#0a0a0a]" />
         <img 
@@ -64,11 +64,11 @@ export default function LoginPage() {
 
       <div className="w-full max-w-[420px] z-10 animate-in fade-in zoom-in duration-700">
         <div className="mb-10 text-center">
-          <h2 className="text-[12px] uppercase tracking-[0.5em] text-[#e4c590] font-bold mb-3">
+          <h2 className="text-[12px] uppercase tracking-[0.5em] contact-number font-bold mb-3">
             {isRegister ? 'Join Us' : 'Welcome Back'}
           </h2>
           <h1 className="text-6xl font-serif italic text-white tracking-tight">Meraki Restro</h1>
-          <div className="w-12 h-[1px] bg-[#e4c590] mx-auto mt-6 opacity-40"></div>
+          <div className="w-12 h-[1px] bg-[#791B1B] mx-auto mt-6 opacity-40"></div>
         </div>
 
         <div className="border border-white/10 bg-white/[0.02] p-8 md:p-10 backdrop-blur-xl shadow-2xl rounded-sm">
@@ -85,7 +85,7 @@ export default function LoginPage() {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                    className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#791B1B] transition-all placeholder:text-gray-800"
                     style={{ fontSize: '18px' }}
                     placeholder="Rajesh Sharma"
                   />
@@ -101,7 +101,7 @@ export default function LoginPage() {
                     required
                     value={phoneNo}
                     onChange={(e) => setPhoneNo(e.target.value)}
-                    className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#e4c590] transition-all placeholder:text-gray-800"
+                    className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#791B1B] transition-all placeholder:text-gray-800"
                     style={{ fontSize: '18px' }}
                     placeholder="98XXXXXXXX"
                   />
@@ -118,7 +118,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#c19977] transition-all placeholder:text-gray-800"
+                className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#791B1B] transition-all placeholder:text-gray-800"
                 style={{ fontSize: '18px' }}
                 placeholder="admin@hiddenhut.com"
               />
@@ -133,7 +133,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#c19977] transition-all placeholder:text-gray-800"
+                className="w-full border-b border-white/10 bg-transparent px-1 py-4 text-white outline-none focus:border-[#791B1B] transition-all placeholder:text-gray-800"
                 style={{ fontSize: '18px' }}
                 placeholder="••••••••"
               />
@@ -149,7 +149,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#e4c590] py-4 text-[13px] font-bold uppercase tracking-[0.3em] text-black transition-all hover:bg-[#d4b580] disabled:opacity-50 shadow-lg active:scale-[0.98]"
+                className="w-full bg-[#791B1B] py-4 text-[13px] font-bold uppercase tracking-[0.3em] text-black transition-all hover:bg-[#702E2E] disabled:opacity-50 shadow-lg active:scale-[0.98]"
               >
                 {loading ? 'Verifying...' : isRegister ? 'Create Account' : 'Sign In'}
               </button>
@@ -160,7 +160,7 @@ export default function LoginPage() {
                   setIsRegister(!isRegister);
                   setError(null);
                 }}
-                className="w-full text-center text-[12px] uppercase tracking-widest text-gray-500 hover:text-[#e4c590] transition-colors"
+                className="w-full text-center text-[12px] uppercase tracking-widest text-gray-500 hover:text-[#791B1B] transition-colors"
               >
                 {isRegister ? 'Already have an account? Login' : "Don't have an account? Register"}
               </button>

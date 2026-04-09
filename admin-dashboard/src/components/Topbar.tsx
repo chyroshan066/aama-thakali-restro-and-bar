@@ -26,13 +26,13 @@ export function Topbar() {
       {/* Dynamic Section Title */}
       <div className="relative group">
         <div className="flex items-center gap-3">
-          <div className="h-2 w-[1px] bg-[#c19977] opacity-50 transition-all group-hover:h-4 group-hover:opacity-100"></div>
+          <div className="h-2 w-[1px] bg-[#791B1B] opacity-50 transition-all group-hover:h-4 group-hover:opacity-100"></div>
           <h1 className="text-[10px] font-bold uppercase tracking-[0.6em] text-gray-400 transition-colors group-hover:text-white">
             {getPageTitle()}
           </h1>
         </div>
         {/* Subtle decorative underline */}
-        <div className="absolute -bottom-1 left-4 h-[1px] w-0 bg-gradient-to-r from-[#c19977]/40 to-transparent transition-all duration-700 group-hover:w-full"></div>
+        <div className="absolute -bottom-1 left-4 h-[1px] w-0 bg-gradient-to-r from-[#791B1B]/40 to-transparent transition-all duration-700 group-hover:w-full"></div>
       </div>
       
       {/* Auth Component Trigger */}

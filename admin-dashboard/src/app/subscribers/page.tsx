@@ -55,7 +55,7 @@ export default function SubscribersPage() {
   }, [state, searchQuery]);
 
   return (
-    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#c19977]/30">
+    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#791B1B]/30">
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
         <Topbar />
@@ -64,11 +64,11 @@ export default function SubscribersPage() {
           {/* Branded Header */}
           <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
-              <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#c19977] font-semibold mb-2">
+              <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#791B1B] font-semibold mb-2">
                 Marketing Outreach
               </h2>
               <h1 className="text-4xl font-serif italic tracking-tight text-white"> Subscribers </h1>
-              <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#c19977] to-transparent"></div>
+              <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#791B1B] to-transparent"></div>
             </div>
 
             {/* Search Input */}
@@ -78,15 +78,15 @@ export default function SubscribersPage() {
                 placeholder="Search by identity..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-zinc-900/50 border border-white/10 px-4 py-2.5 text-[11px] text-white focus:outline-none focus:border-[#c19977]/50 transition-all placeholder:text-gray-600 font-light"
+                className="w-full bg-zinc-900/50 border border-white/10 px-4 py-2.5 text-[11px] text-white focus:outline-none focus:border-[#791B1B]/50 transition-all placeholder:text-gray-600 font-light"
               />
-              <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#c19977] transition-all duration-300 group-focus-within:w-full"></div>
+              <div className="absolute bottom-0 left-0 h-[1px] w-0 bg-[#791B1B] transition-all duration-300 group-focus-within:w-full"></div>
             </div>
           </div>
 
           {state.status === "loading" && (
             <div className="flex h-96 flex-col items-center justify-center space-y-4">
-               <div className="h-10 w-10 animate-spin border-[1px] border-[#c19977] border-t-transparent rounded-full"></div>
+               <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
                <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Synchronizing Registry...</p>
             </div>
           )}
@@ -102,18 +102,18 @@ export default function SubscribersPage() {
               <table className="min-w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/[0.01]">
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Ref ID</th>
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Subscriber Identity</th>
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 text-right">Date Joined</th>
+                    <th className="registry-tr">Ref ID</th>
+                    <th className="registry-tr">Subscriber Identity</th>
+                    <th className="registry-tr text-right">Date Joined</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/[0.03]">
                   {filteredSubscribers.length > 0 ? (
                     filteredSubscribers.map((s) => (
                       <tr key={s.id} className="group transition-colors hover:bg-white/[0.02]">
-                        <td className="px-6 py-5 font-mono text-[14px] text-[#c19977]/60">#{s.id}</td>
+                        <td className="px-6 py-5 font-mono text-[14px] text-[#791B1B]/60">#{s.id}</td>
                         <td className="px-6 py-5">
-                          <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">
+                          <p className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">
                             {s.email}
                           </p>
                           <p className="text-[9px] text-gray-600 uppercase tracking-widest mt-1">Confirmed Subscriber</p>

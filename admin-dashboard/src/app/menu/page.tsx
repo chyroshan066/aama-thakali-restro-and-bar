@@ -126,16 +126,16 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#c19977]/30">
+    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#791B1B]/30">
       <Sidebar />
       <main className="flex-1 overflow-y-auto relative">
         <Topbar />
 
         <div className="p-6 lg:p-10 relative z-10">
           <div className="mb-12">
-            <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#c19977] font-semibold mb-2">Culinary Portfolio</h2>
+            <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#791B1B] font-semibold mb-2">Culinary Portfolio</h2>
             <h1 className="text-4xl font-serif italic tracking-tight text-white">Menu Gallery</h1>
-            <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#c19977] to-transparent"></div>
+            <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#791B1B] to-transparent"></div>
           </div>
 
           <section className="mb-16 border border-white/[0.05] bg-white/[0.01] p-8 backdrop-blur-md relative overflow-hidden group">
@@ -144,24 +144,24 @@ export default function MenuPage() {
             </h2>
             <form onSubmit={handleSubmit} className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#c19977] font-bold">Item Name</label>
-                  <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#c19977] transition-all" placeholder="e.g. Signature Truffle Ramen" />
+                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Item Name</label>
+                  <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="e.g. Signature Truffle Ramen" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#c19977] font-bold">Category</label>
-                  <input required value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#c19977] transition-all" placeholder="e.g. Small Plates" />
+                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Category</label>
+                  <input required value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="e.g. Small Plates" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#c19977] font-bold">Price (NPR)</label>
-                  <input type="number" step="1" required value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#c19977] transition-all" placeholder="00.00" />
+                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Price (NPR)</label>
+                  <input type="number" step="1" required value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="00.00" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#c19977] font-bold">Display Image</label>
-                  <input type="file" accept="image/*" onChange={(e) => setImageFile(e.target.files?.[0] ?? null)} className="w-full text-[10px] text-gray-500 file:mr-4 file:border file:border-[#c19977]/30 file:bg-transparent file:px-4 file:py-1.5 file:text-[9px] file:uppercase file:text-[#c19977] cursor-pointer" />
+                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Display Image</label>
+                  <input type="file" accept="image/*" onChange={(e) => setImageFile(e.target.files?.[0] ?? null)} className="w-full text-[10px] text-gray-500 file:mr-4 file:border file:border-[#791B1B]/30 file:bg-transparent file:px-4 file:py-1.5 file:text-[9px] file:uppercase file:text-[#791B1B] cursor-pointer" />
                 </div>
                 <div className="sm:col-span-2 lg:col-span-3 space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#c19977] font-bold">Composition</label>
-                  <input required value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#c19977] transition-all" placeholder="Describe the flavor profile..." />
+                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Composition</label>
+                  <input required value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="Describe the flavor profile..." />
                 </div>
                 
                 <div className="flex items-end gap-3">
@@ -169,7 +169,7 @@ export default function MenuPage() {
                     type="submit" 
                     disabled={isSubmitting}
                     className={`flex-1 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-2 
-                      ${isSubmitting ? "bg-[#c19977]/50 cursor-not-allowed text-black/50" : "bg-[#c19977] text-black hover:bg-[#d4b580]"}`}
+                      ${isSubmitting ? "bg-[#791B1B]/50 cursor-not-allowed text-black/50" : "bg-[#791B1B] text-black hover:bg-[#d4b580]"}`}
                    >
                      {isSubmitting ? (
                        <>
@@ -190,7 +190,7 @@ export default function MenuPage() {
           <section>
             {state.status === "loading" && (
               <div className="flex flex-col items-center justify-center py-32 space-y-4">
-                <div className="h-10 w-10 animate-spin border-[1px] border-[#c19977] border-t-transparent rounded-full"></div>
+                <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
                 <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Accessing Registry</p>
               </div>
             )}
@@ -199,19 +199,19 @@ export default function MenuPage() {
               <>
                 <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {state.items.map((item) => (
-                    <article key={item.id} className="group relative border border-white/[0.05] bg-zinc-950/40 p-4 transition-all hover:border-[#c19977]/40">
+                    <article key={item.id} className="group relative border border-white/[0.05] bg-zinc-950/40 p-4 transition-all hover:border-[#791B1B]/40">
                       <div className="relative mb-6 aspect-[4/5] w-full overflow-hidden bg-black">
                         {item.image_url ? (
                           <Image src={item.image_url} alt={item.name} fill className="object-cover opacity-80 grayscale-[0.5] group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center text-[9px] uppercase tracking-[0.3em] text-zinc-800">Visual Missing</div>
                         )}
-                        <div className="absolute top-0 right-0 bg-[#c19977] px-3 py-1.5 text-[10px] font-bold text-black tracking-tighter">NPR {Number(item.price)}</div>
+                        <div className="absolute top-0 right-0 bg-[#791B1B] px-3 py-1.5 text-[10px] font-bold text-black tracking-tighter">NPR {Number(item.price)}</div>
                       </div>
-                      <h3 className="font-serif italic text-xl text-white group-hover:text-[#c19977] transition-colors">{item.name}</h3>
+                      <h3 className="font-serif italic text-xl text-white group-hover:text-[#791B1B] transition-colors">{item.name}</h3>
                       <p className="text-[12px] leading-relaxed text-gray-500 line-clamp-3 mt-2">{item.description}</p>
                       <div className="mt-6 flex items-center justify-between border-t border-white/[0.05] pt-5">
-                        <button onClick={() => setForm({ id: item.id, name: item.name, description: item.description, price: String(item.price), category: item.category })} className="text-[9px] uppercase tracking-[0.3em] text-gray-500 hover:text-[#c19977]">Modify</button>
+                        <button onClick={() => setForm({ id: item.id, name: item.name, description: item.description, price: String(item.price), category: item.category })} className="text-[9px] uppercase tracking-[0.3em] text-gray-500 hover:text-[#791B1B]">Modify</button>
                         <button onClick={() => handleDelete(item.id)} className="text-[9px] uppercase tracking-[0.3em] text-zinc-800 hover:text-red-500">Eliminate</button>
                       </div>
                     </article>
@@ -220,7 +220,7 @@ export default function MenuPage() {
 
                 {state.hasMore && (
                    <div className="mt-16 text-center">
-                     <button onClick={handleLoadMore} className="border border-[#c19977] px-8 py-3 text-[10px] uppercase tracking-[0.3em] text-[#c19977] hover:bg-[#c19977] hover:text-black transition-all">
+                     <button onClick={handleLoadMore} className="border border-[#791B1B] px-8 py-3 text-[10px] uppercase tracking-[0.3em] text-[#791B1B] hover:bg-[#791B1B] hover:text-black transition-all">
                        Load More Items
                      </button>
                    </div>

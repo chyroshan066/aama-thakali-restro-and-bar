@@ -47,35 +47,35 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center bg-[#080808] p-6 selection:bg-[#c19977]/30">
+    <div className="relative flex min-h-screen items-center justify-center bg-[#080808] p-6 selection:bg-[#791B1B]/30">
       {/* Cinematic Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-[0.03]" />
-        <div className="absolute -top-[15%] -left-[10%] h-[50%] w-[50%] rounded-full bg-[#c19977]/5 blur-[140px]" />
-        <div className="absolute -bottom-[15%] -right-[10%] h-[50%] w-[50%] rounded-full bg-[#c19977]/5 blur-[140px]" />
+        <div className="absolute -top-[15%] -left-[10%] h-[50%] w-[50%] rounded-full bg-[#791B1B]/5 blur-[140px]" />
+        <div className="absolute -bottom-[15%] -right-[10%] h-[50%] w-[50%] rounded-full bg-[#791B1B]/5 blur-[140px]" />
       </div>
 
       <div className="w-full max-w-[440px] z-10">
         {/* Branding */}
         <div className="mb-12 text-center">
-          <h2 className="text-[10px] uppercase tracking-[0.6em] text-[#c19977] font-semibold mb-4 animate-pulse">
+          <h2 className="text-[10px] uppercase tracking-[0.6em] text-[#791B1B] font-semibold mb-4 animate-pulse">
             {isRegister ? 'Credential Registry' : 'Identity Verification'}
           </h2>
           <h1 className="text-5xl font-serif italic text-white tracking-tighter mb-2">Meraki Restro</h1>
           <div className="flex items-center justify-center gap-4 mt-4">
-             <div className="h-[1px] w-8 bg-[#c19977]/30"></div>
+             <div className="h-[1px] w-8 bg-[#791B1B]/30"></div>
              <p className="text-[11px] uppercase tracking-[0.3em] text-gray-500 font-medium whitespace-nowrap">
                Admin Portal
              </p>
-             <div className="h-[1px] w-8 bg-[#c19977]/30"></div>
+             <div className="h-[1px] w-8 bg-[#791B1B]/30"></div>
           </div>
         </div>
 
         {/* Login Card */}
         <div className="relative border border-white/[0.05] bg-white/[0.01] p-8 md:p-12 backdrop-blur-xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] group">
           {/* Subtle Corner Accents */}
-          <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-[#c19977]/40 transition-all group-hover:scale-110"></div>
-          <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-[#c19977]/40 transition-all group-hover:scale-110"></div>
+          <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-[#791B1B]/40 transition-all group-hover:scale-110"></div>
+          <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-[#791B1B]/40 transition-all group-hover:scale-110"></div>
 
           <form className="space-y-8" onSubmit={handleSubmit}>
             
@@ -89,7 +89,7 @@ export default function LoginPage() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#c19977] transition-all placeholder:text-gray-800"
+                  className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#791B1B] transition-all placeholder:text-gray-800"
                   placeholder="e.g., Rajesh Sharma"
                 />
               </div>
@@ -104,7 +104,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#c19977] transition-all placeholder:text-gray-800"
+                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#791B1B] transition-all placeholder:text-gray-800"
                 placeholder="admin@hiddenhut.com"
               />
             </div>
@@ -118,7 +118,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#c19977] transition-all placeholder:text-gray-800"
+                className="w-full border-b border-white/10 bg-transparent px-1 py-3 text-sm text-white outline-none focus:border-[#791B1B] transition-all placeholder:text-gray-800"
                 placeholder="••••••••"
               />
             </div>
@@ -136,7 +136,7 @@ export default function LoginPage() {
                 className="relative w-full py-4 text-[11px] font-bold uppercase tracking-[0.4em] text-black transition-all disabled:opacity-50 overflow-hidden"
               >
                 {/* Gold Gradient Button Background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#c19977] via-[#d4b580] to-[#c19977] transition-all hover:scale-105 active:scale-95 shadow-[0_10px_20px_-10px_rgba(193,153,119,0.5)]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#791B1B] via-[#702E2E] to-[#791B1B] transition-all hover:scale-105 active:scale-95 shadow-[0_10px_20px_-10px_rgba(193,153,119,0.5)]" />
                 <span className="relative z-10">
                   {loading ? 'Authenticating...' : isRegister ? 'Initialize Access' : 'Authorize Entry'}
                 </span>
@@ -148,7 +148,7 @@ export default function LoginPage() {
                   setIsRegister(!isRegister);
                   setError(null);
                 }}
-                className="w-full text-center text-[10px] uppercase tracking-[0.2em] text-gray-600 hover:text-[#c19977] transition-colors italic"
+                className="w-full text-center text-[10px] uppercase tracking-[0.2em] text-gray-600 hover:text-[#791B1B] transition-colors italic"
               >
                 {isRegister ? 'Return to secure login' : 'New Admin? Request entry'}
               </button>

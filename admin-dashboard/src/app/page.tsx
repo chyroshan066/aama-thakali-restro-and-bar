@@ -62,7 +62,7 @@ export default function HomePage() {
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
-      case 'completed': return 'text-[#c19977] border-[#c19977]/30 bg-[#c19977]/5';
+      case 'completed': return 'text-[#791B1B] border-[#791B1B]/30 bg-[#791B1B]/5';
       case 'pending': return 'text-amber-500 border-amber-500/20 bg-amber-500/5';
       case 'cancelled': return 'text-red-400 border-red-500/20 bg-red-500/5';
       default: return 'text-gray-400 border-white/10 bg-white/5';
@@ -70,7 +70,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#c19977] selection:text-black">
+    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#791B1B] selection:text-black">
       {/* Background Texture Overlay */}
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]"></div>
       
@@ -84,16 +84,16 @@ export default function HomePage() {
           {/* Header Section */}
           <div className="mb-12 flex justify-between items-end">
             <div>
-              <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#c19977] font-semibold mb-2">
+              <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#791B1B] font-semibold mb-2">
                 Executive Overview
               </h2>
               <h1 className="text-4xl font-serif italic tracking-tight text-white">Management Console</h1>
-              <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#c19977] to-transparent"></div>
+              <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#791B1B] to-transparent"></div>
             </div>
             <div className="text-right hidden md:block">
                <p className="text-[10px] text-gray-500 uppercase tracking-widest">System Status</p>
                <div className="flex items-center gap-2 justify-end mt-1">
-                  <span className={`h-1.5 w-1.5 rounded-full animate-pulse ${state.status === 'error' ? 'bg-red-500' : 'bg-[#c19977]'}`}></span>
+                  <span className={`h-1.5 w-1.5 rounded-full animate-pulse ${state.status === 'error' ? 'bg-red-500' : 'bg-[#791B1B]'}`}></span>
                   <p className="text-xs italic text-gray-300">{state.status === 'error' ? 'Interrupted' : 'Operational'}</p>
                </div>
             </div>
@@ -107,8 +107,8 @@ export default function HomePage() {
               { label: "Menu Items", value: state.status === "success" ? state.menuCount : "—", desc: "Curated selection" },
               { label: "Active Mode", value: state.status === "error" ? "Offline" : "Live", desc: "Real-time sync" },
             ].map((stat, i) => (
-              <article key={i} className="relative overflow-hidden border border-white/[0.05] bg-white/[0.01] p-8 backdrop-blur-md transition-all duration-500 hover:border-[#c19977]/40 group">
-                <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500 group-hover:text-[#c19977] transition-colors duration-300">{stat.label}</p>
+              <article key={i} className="relative overflow-hidden border border-white/[0.05] bg-white/[0.01] p-8 backdrop-blur-md transition-all duration-500 hover:border-[#791B1B]/40 group">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-gray-500 group-hover:text-[#791B1B] transition-colors duration-300">{stat.label}</p>
                 <p className="mt-4 text-3xl font-serif italic text-white group-hover:translate-x-1 transition-transform duration-500">
                   {stat.value}
                 </p>
@@ -116,8 +116,8 @@ export default function HomePage() {
                 
                 {/* Subtle Gold Corner Accent */}
                 <div className="absolute top-0 right-0 w-8 h-8 opacity-20 group-hover:opacity-100 transition-opacity">
-                   <div className="absolute top-0 right-0 w-[1px] h-full bg-[#c19977]"></div>
-                   <div className="absolute top-0 right-0 h-[1px] w-full bg-[#c19977]"></div>
+                   <div className="absolute top-0 right-0 w-[1px] h-full bg-[#791B1B]"></div>
+                   <div className="absolute top-0 right-0 h-[1px] w-full bg-[#791B1B]"></div>
                 </div>
               </article>
             ))}
@@ -128,9 +128,9 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between p-8 border-b border-white/[0.05] bg-white/[0.02]">
               <div>
                 <h3 className="text-xl font-serif italic text-white">Kitchen Logbook</h3>
-                <p className="text-[10px] uppercase tracking-widest text-[#c19977] mt-1">Latest Order Registry</p>
+                <p className="text-[10px] uppercase tracking-widest text-[#791B1B] mt-1">Latest Order Registry</p>
               </div>
-              <button className="mt-4 md:mt-0 border border-[#c19977]/50 px-8 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#c19977] hover:bg-[#c19977] hover:text-black transition-all duration-300 rounded-sm">
+              <button className="mt-4 md:mt-0 border border-[#791B1B]/50 px-8 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#791B1B] hover:bg-[#791B1B] hover:text-black transition-all duration-300 rounded-sm">
                 View All Activity
               </button>
             </div>
@@ -149,9 +149,9 @@ export default function HomePage() {
                 <tbody>
                   {latestOrders.map((order) => (
                     <tr key={order.id} className="group bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
-                      <td className="px-6 py-5 font-mono text-[15px] text-[#c19977]/60">#{order.id}</td>
+                      <td className="px-6 py-5 font-mono text-[15px] text-[#791B1B]/60">#{order.id}</td>
                       <td className="px-6 py-5">
-                        <span className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">{order.customer_name ?? "Walk-in Guest"}</span>
+                        <span className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">{order.customer_name ?? "Walk-in Guest"}</span>
                       </td>
                       <td className="px-6 py-5 text-sm font-medium text-gray-200">Rs. {Number(order.total_amount).toLocaleString()}</td>
                       <td className="px-6 py-5">
@@ -190,11 +190,11 @@ export default function HomePage() {
           background: transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #c1997720;
+          background: #791B1B20;
           border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #c1997750;
+          background: #791B1B50;
         }
       `}</style>
     </div>

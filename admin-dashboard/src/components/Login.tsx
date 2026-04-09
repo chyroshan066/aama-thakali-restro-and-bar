@@ -54,11 +54,11 @@ export function Login() {
               className="flex items-center gap-4 group outline-none"
             >
               <div className="text-right hidden md:block transition-all group-hover:translate-x-[-4px]">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#c19977]">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#791B1B]">
                   {user?.name || "Administrator"}
                 </p>
                 <div className="flex items-center justify-end gap-1.5 mt-0.5">
-                  <span className="h-1 w-1 rounded-full bg-[#c19977] animate-pulse"></span>
+                  <span className="h-1 w-1 rounded-full bg-[#791B1B] animate-pulse"></span>
                   <p className="text-[8px] uppercase tracking-widest text-gray-600 italic">
                     Verified Session
                   </p>
@@ -67,10 +67,10 @@ export function Login() {
 
               {/* Profile Initial Circle with Halo */}
               <div className="relative">
-                <div className="h-10 w-10 rounded-full border border-[#c19977]/30 bg-[#c19977]/5 flex items-center justify-center text-[#c19977] text-[11px] font-bold transition-all duration-500 group-hover:border-[#c19977] group-hover:bg-[#c19977]/10 z-10 relative">
+                <div className="h-10 w-10 rounded-full border border-[#791B1B]/30 bg-[#791B1B]/5 flex items-center justify-center text-[#791B1B] text-[11px] font-bold transition-all duration-500 group-hover:border-[#791B1B] group-hover:bg-[#791B1B]/10 z-10 relative">
                   {(user?.name || "A").charAt(0).toUpperCase()}
                 </div>
-                <div className="absolute inset-0 rounded-full bg-[#c19977]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-full bg-[#791B1B]/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </button>
 
@@ -88,7 +88,7 @@ export function Login() {
                   <Link
                     href={CLIENT_DASHBOARD_URL}
                     onClick={() => setIsMenuOpen(false)}
-                    className="w-full flex items-center justify-between px-4 py-3 text-[9px] font-bold uppercase tracking-[0.25em] text-gray-400 hover:text-[#c19977] hover:bg-white/5 transition-all group/link"
+                    className="w-full flex items-center justify-between px-4 py-3 text-[9px] font-bold uppercase tracking-[0.25em] text-gray-400 hover:text-[#791B1B] hover:bg-white/5 transition-all group/link"
                   >
                     <span>Go to Website</span>
                     <svg
@@ -121,19 +121,19 @@ export function Login() {
                 </div>
 
                 {/* Decorative Bottom Line */}
-                <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#c19977]/20 to-transparent"></div>
+                <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#791B1B]/20 to-transparent"></div>
               </div>
             )}
           </div>
         ) : (
           <button
             onClick={() => router.push("/login")}
-            className="group relative overflow-hidden border border-[#c19977]/50 px-8 py-2.5 text-[9px] font-bold uppercase tracking-[0.3em] text-[#c19977] transition-all hover:text-black"
+            className="group relative overflow-hidden border border-[#791B1B]/50 px-8 py-2.5 text-[9px] font-bold uppercase tracking-[0.3em] text-[#791B1B] transition-all hover:text-black"
           >
             <span className="relative z-10 transition-colors duration-300">
               Authorize Access
             </span>
-            <div className="absolute inset-0 bg-[#c19977] translate-y-full transition-transform duration-300 group-hover:translate-y-0 z-0"></div>
+            <div className="absolute inset-0 bg-[#791B1B] translate-y-full transition-transform duration-300 group-hover:translate-y-0 z-0"></div>
           </button>
         )}
       </div>

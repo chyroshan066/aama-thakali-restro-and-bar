@@ -104,7 +104,7 @@ export default function GalleryPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#c19977]/30">
+    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#791B1B]/30">
       <Sidebar />
       <main className="flex-1 overflow-y-auto relative">
         <div className="fixed inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
@@ -112,9 +112,9 @@ export default function GalleryPage() {
         
         <div className="p-6 lg:p-10 relative z-10">
           <div className="mb-12">
-            <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#c19977] font-semibold mb-2">Visual Narrative</h2>
+            <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#791B1B] font-semibold mb-2">Visual Narrative</h2>
             <h1 className="text-4xl font-serif italic tracking-tight text-white">Gallery Management</h1>
-            <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#c19977] to-transparent"></div>
+            <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#791B1B] to-transparent"></div>
           </div>
 
           <section className="mb-16 border border-white/[0.05] bg-white/[0.01] p-8 backdrop-blur-md relative overflow-hidden group">
@@ -122,23 +122,23 @@ export default function GalleryPage() {
             
             <form onSubmit={handleUpload} className="flex flex-col gap-10 lg:flex-row lg:items-end relative z-10">
               <div className="flex-1 space-y-3">
-                <label className="text-[9px] uppercase tracking-[0.2em] text-[#c19977] font-bold">Source File</label>
+                <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Source File</label>
                 <input 
                   type="file" 
                   accept="image/*" 
                   onChange={(e) => setFile(e.target.files?.[0] ?? null)} 
                   disabled={isCompressing}
-                  className="w-full text-[11px] text-gray-500 file:mr-6 file:border file:border-[#c19977]/30 file:bg-transparent file:px-6 file:py-2.5 file:text-[10px] file:uppercase file:tracking-widest file:text-[#c19977] hover:file:bg-[#c19977] hover:file:text-black file:transition-all cursor-pointer" 
+                  className="w-full text-[11px] text-gray-500 file:mr-6 file:border file:border-[#791B1B]/30 file:bg-transparent file:px-6 file:py-2.5 file:text-[10px] file:uppercase file:tracking-widest file:text-[#791B1B] hover:file:bg-[#791B1B] hover:file:text-black file:transition-all cursor-pointer" 
                 />
               </div>
 
               <div className="flex-1 space-y-3">
-                <label className="text-[9px] uppercase tracking-[0.2em] text-[#c19977] font-bold">Asset Label</label>
+                <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Asset Label</label>
                 <input 
                   value={title} 
                   onChange={(e) => setTitle(e.target.value)} 
                   disabled={isCompressing}
-                  className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#c19977] transition-all placeholder:text-gray-800" 
+                  className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all placeholder:text-gray-800" 
                   placeholder="e.g. Signature Cocktails" 
                 />
               </div>
@@ -147,7 +147,7 @@ export default function GalleryPage() {
               <button 
                 type="submit" 
                 disabled={isCompressing || !file}
-                className="bg-[#c19977] disabled:opacity-50 disabled:cursor-not-allowed px-12 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-black hover:bg-[#d4b580] transition-all shadow-[0_10px_20px_-10px_rgba(193,153,119,0.3)]"
+                className="bg-[#791B1B] disabled:opacity-50 disabled:cursor-not-allowed px-12 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] text-black hover:bg-[#d4b580] transition-all shadow-[0_10px_20px_-10px_rgba(193,153,119,0.3)]"
               >
                 {isCompressing ? "Processing Image..." : "Sync to Gallery"}
               </button>
@@ -158,7 +158,7 @@ export default function GalleryPage() {
           <section>
              {state.status === "loading" && (
                <div className="flex flex-col items-center justify-center py-32 space-y-4">
-                 <div className="h-10 w-10 animate-spin border-[1px] border-[#c19977] border-t-transparent rounded-full"></div>
+                 <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
                  <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Loading Visuals</p>
                </div>
              )}
@@ -172,7 +172,7 @@ export default function GalleryPage() {
              {state.status === "success" && (
                <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                  {state.images.map((image) => (
-                   <article key={image.id} className="group relative border border-white/[0.05] bg-zinc-950/40 p-3 transition-all duration-500 hover:border-[#c19977]/50">
+                   <article key={image.id} className="group relative border border-white/[0.05] bg-zinc-950/40 p-3 transition-all duration-500 hover:border-[#791B1B]/50">
                      <div className="relative mb-5 aspect-[4/5] w-full overflow-hidden bg-black">
                        <Image 
                          src={image.image_url} 
@@ -188,7 +188,7 @@ export default function GalleryPage() {
                        <p className="text-[12px] font-serif italic tracking-wide text-gray-200 truncate">{image.title || "Untitled Perspective"}</p>
                        <div className="flex items-center justify-between">
                           <span className="text-[8px] uppercase tracking-[0.2em] text-gray-600">Asset ID: #{image.id}</span>
-                          <span className="text-[8px] uppercase tracking-[0.2em] text-[#c19977]/60">High Definition</span>
+                          <span className="text-[8px] uppercase tracking-[0.2em] text-[#791B1B]/60">High Definition</span>
                        </div>
                      </div>
                    </article>

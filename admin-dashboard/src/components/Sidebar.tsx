@@ -30,7 +30,7 @@ export function Sidebar() {
             Aama Thakali
           </h2>
           <div className="flex items-center gap-3 mt-2">
-            <span className="h-[1px] w-6 bg-[#c19977]/40 transition-all duration-500 group-hover:w-10 group-hover:bg-[#c19977]"></span>
+            <span className="h-[1px] w-6 bg-[#791B1B]/40 transition-all duration-500 group-hover:w-10 group-hover:bg-[#791B1B]"></span>
             <p className="text-[9px] uppercase tracking-[0.5em] text-gray-500 font-bold whitespace-nowrap">
               Management
             </p>
@@ -51,7 +51,7 @@ export function Sidebar() {
               href={item.href}
               className={`group flex items-center justify-between px-3 py-4 text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-500 rounded-sm relative overflow-hidden ${
                 isActive
-                  ? "text-[#c19977]"
+                  ? "text-[#791B1B]"
                   : "text-gray-500 hover:text-white hover:bg-white/[0.02]"
               }`}
             >
@@ -62,13 +62,13 @@ export function Sidebar() {
               {isActive && (
                 <div className="flex items-center gap-2 relative z-10">
                    {/* Gold Glow Indicator */}
-                   <span className="h-1 w-1 rounded-full bg-[#c19977] shadow-[0_0_10px_#c19977]"></span>
+                   <span className="h-1 w-1 rounded-full bg-[#791B1B] shadow-[0_0_10px_#791B1B]"></span>
                 </div>
               )}
               
               {/* Active Background Slide */}
               {isActive && (
-                <div className="absolute inset-0 bg-gradient-to-r from-[#c19977]/5 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#791B1B]/5 to-transparent pointer-events-none"></div>
               )}
             </Link>
           );
@@ -79,10 +79,10 @@ export function Sidebar() {
       <div className="mt-auto border-t border-white/[0.05] pt-8">
         <div className="flex items-center gap-3 px-3 group">
           <div className="relative">
-            <div className="h-1.5 w-1.5 rounded-full bg-[#c19977] animate-pulse"></div>
-            <div className="absolute inset-0 h-1.5 w-1.5 rounded-full bg-[#c19977] blur-[2px] opacity-50"></div>
+            <div className="h-1.5 w-1.5 rounded-full bg-[#791B1B] animate-pulse"></div>
+            <div className="absolute inset-0 h-1.5 w-1.5 rounded-full bg-[#791B1B] blur-[2px] opacity-50"></div>
           </div>
-          <p className="text-[9px] uppercase tracking-[0.4em] text-gray-600 transition-colors group-hover:text-[#c19977]">
+          <p className="text-[9px] uppercase tracking-[0.4em] text-gray-600 transition-colors group-hover:text-[#791B1B]">
             Core Operational
           </p>
         </div>

@@ -19,7 +19,7 @@ type ReservationsState =
 // Helper for dynamic status coloring - Meraki Restro Gold Palette
 const getStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
-    case 'approved': return 'text-[#c19977] border-[#c19977]/30 bg-[#c19977]/5';
+    case 'approved': return 'text-[#791B1B] border-[#791B1B]/30 bg-[#791B1B]/5';
     case 'rejected': return 'text-rose-400 border-rose-500/20 bg-rose-500/5';
     case 'pending': return 'text-amber-400 border-amber-500/20 bg-amber-500/5';
     default: return 'text-gray-400 border-white/10 bg-white/5';
@@ -65,7 +65,7 @@ export default function ReservationsPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#c19977]/30">
+    <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#791B1B]/30">
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
         <Topbar />
@@ -73,16 +73,16 @@ export default function ReservationsPage() {
         <div className="p-6 lg:p-10">
           {/* Branded Header */}
           <div className="mb-12">
-            <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#c19977] font-semibold mb-2">
+            <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#791B1B] font-semibold mb-2">
               Booking Ledger
             </h2>
             <h1 className="text-4xl font-serif italic tracking-tight text-white">Guest Reservations</h1>
-            <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#c19977] to-transparent"></div>
+            <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#791B1B] to-transparent"></div>
           </div>
 
           {state.status === "loading" && (
             <div className="flex h-96 flex-col items-center justify-center space-y-4">
-               <div className="h-10 w-10 animate-spin border-[1px] border-[#c19977] border-t-transparent rounded-full"></div>
+               <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
                <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Syncing Table Schedule...</p>
             </div>
           )}
@@ -98,37 +98,37 @@ export default function ReservationsPage() {
               <table className="min-w-full text-left border-collapse">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/[0.01]">
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Ref ID</th>
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Guest Profile</th>
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Contact</th>
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Schedule</th>
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 text-center">Party Size</th>
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Status</th>
-                    <th className="px-6 py-6 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 text-right">Operations</th>
+                    <th className="registry-tr">Ref ID</th>
+                    <th className="registry-tr">Guest Profile</th>
+                    <th className="registry-tr">Contact</th>
+                    <th className="registry-tr">Schedule</th>
+                    <th className="registry-tr text-center">Party Size</th>
+                    <th className="registry-tr">Status</th>
+                    <th className="registry-tr text-right">Operations</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/[0.03]">
                   {state.reservations.length > 0 ? (
                     state.reservations.map((r) => (
                       <tr key={r.id} className="group transition-colors hover:bg-white/[0.02]">
-                        <td className="px-6 py-5 font-mono text-[15px] text-[#c19977]/60">#{r.id}</td>
+                        <td className="px-6 py-5 font-mono text-[15px] text-[#791B1B]/60">#{r.id}</td>
                         <td className="px-6 py-5">
-                          <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">{r.customer_name}</p>
-                          <p className="text-[11px] font-serif italic text-[#c19977] mt-0.5">Client ID: {r.user_id}</p>
+                          <p className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">{r.customer_name}</p>
+                          <p className="text-[11px] font-serif italic text-[#791B1B] mt-0.5">Client ID: {r.user_id}</p>
                           {/* <p className="text-[9px] text-gray-600 uppercase tracking-widest mt-1">Authorized Booking</p> */}
                         </td>
                         <td className="px-6 py-5">
                           
-                          <p className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">{r.phone_no}</p>
+                          <p className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">{r.phone_no}</p>
                         </td>
                         <td className="px-6 py-5">
                           <p className="text-sm text-white">
                             {new Date(r.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
                           </p>
-                          <p className="text-[11px] font-serif italic text-[#c19977] mt-0.5">{r.time}</p>
+                          <p className="text-[11px] font-serif italic text-[#791B1B] mt-0.5">{r.time}</p>
                         </td>
                         <td className="px-6 py-5 text-center">
-                          <span className="text-sm font-medium text-white group-hover:text-[#c19977] transition-colors">{r.number_of_guests}</span>
+                          <span className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">{r.number_of_guests}</span>
                           <span className="ml-2 text-[9px] uppercase tracking-widest text-gray-600">Per</span>
                         </td>
                         <td className="px-6 py-5">
@@ -140,7 +140,7 @@ export default function ReservationsPage() {
                           <div className="flex justify-end gap-3 opacity-40 group-hover:opacity-100 transition-all duration-500 translate-x-2 group-hover:translate-x-0">
                             <button 
                               onClick={() => updateStatus(r.id, "approved")} 
-                              className="px-4 py-1.5 text-[9px] uppercase tracking-widest border border-[#c19977]/40 text-[#c19977] hover:bg-[#c19977] hover:text-black transition-all"
+                              className="px-4 py-1.5 text-[9px] uppercase tracking-widest border border-[#791B1B]/40 text-[#791B1B] hover:bg-[#791B1B] hover:text-black transition-all"
                             >
                               Confirm
                             </button>
