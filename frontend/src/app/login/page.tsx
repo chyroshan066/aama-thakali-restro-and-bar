@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { storeAuth } from '@/lib/clientApi';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'https://api.merakirestro.com/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'https://api.aamathakalirestro.com.np/api';
 
 export default function LoginPage() {
   const router = useRouter();

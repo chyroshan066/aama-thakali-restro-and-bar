@@ -5,21 +5,21 @@
       "has": [
         {
           "type": "host",
-          "value": "merakirestro.com"
+          "value": "aamathakalirestro.com.np"
         }
       ],
-      "destination": "https://www.merakirestro.com/$1",
+      "destination": "https://www.aamathakalirestro.com.np/$1",
       "permanent": true
     }
   ],
   "rewrites": [
     {
       "source": "/dashboard",
-      "destination": "https://meraki-cafe-restaurant-and-bar-dun.vercel.app/dashboard"
+      "destination": "https://aama-thakali-restro-and-bar-ehne.vercel.app/dashboard"
     },
     {
       "source": "/dashboard/:path*",
-      "destination": "https://meraki-cafe-restaurant-and-bar-dun.vercel.app/dashboard/:path*"
+      "destination": "https://aama-thakali-restro-and-bar-ehne.vercel.app/dashboard/:path*"
     }
   ]
 }

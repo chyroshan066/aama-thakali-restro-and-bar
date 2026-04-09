@@ -40,10 +40,10 @@ export default function BookingsPage() {
 
       try {
         const [ordersRes, resRes] = await Promise.all([
-          fetch("https://api.merakirestro.com/api/orders/me?page=1&limit=10", {
+          fetch("https://api.aamathakalirestro.com.np/api/orders/me?page=1&limit=10", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch("https://api.merakirestro.com/api/reservations/me?page=1&limit=10", {
+          fetch("https://api.aamathakalirestro.com.np/api/reservations/me?page=1&limit=10", {
             headers: { Authorization: `Bearer ${token}` },
           })
         ]);
@@ -86,7 +86,7 @@ export default function BookingsPage() {
     if (!token || !confirm("Are you sure you want to cancel this reservation?")) return;
 
     try {
-      const res = await fetch(`https://api.merakirestro.com/api/reservations/${id}`, {
+      const res = await fetch(`https://api.aamathakalirestro.com.np/api/reservations/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

@@ -113,7 +113,7 @@ export const metadata: Metadata = {
   authors: [{ name: "The Meraki Cafe, Restro & Bar" }],
   creator: "The Meraki Cafe, Restro & Bar",
   publisher: "The Meraki Cafe, Restro & Bar",
-  metadataBase: new URL("https://www.merakirestro.com/"),
+  metadataBase: new URL("https://www.aamathakalirestro.com.np/"),
   alternates: {
     canonical: "/",
   },
