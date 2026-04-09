@@ -190,11 +190,11 @@ export default function HomePage() {
           background: transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #791B1B20;
+          background: [#791B1B]/20;
           border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #791B1B50;
+          background: [#791B1B]/50;
         }
       `}</style>
     </div>
