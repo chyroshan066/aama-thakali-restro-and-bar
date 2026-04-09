@@ -19,8 +19,8 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:3000/dashboard",
-  "https://www.merakirestro.com",
-  "https://www.merakirestro.com/dashboard",
+  "https://www.aamathakalirestro.com.np/",
+  "https://www.aamathakalirestro.com.np/dashboard",
   "https://meraki-cafe-restaurant-and-bar-dun.vercel.app"
 ];
 
@@ -28,8 +28,8 @@ const allowedOrigins = [
 const corsOptions = {
   origin: allowedOrigins,
   credentials: true,
-  methods: ['GET','POST','PUT','DELETE', 'PATCH' ,'OPTIONS'],
-  allowedHeaders: ['Content-Type','Authorization']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 // Apply CORS before all routes/middleware
@@ -58,7 +58,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.post('/api/subscribe', handleSubscription);
-app.get('/api/subscribers', getSubscribers); 
+app.get('/api/subscribers', getSubscribers);
 
 // 404 and error handlers
 app.use(notFoundHandler);
