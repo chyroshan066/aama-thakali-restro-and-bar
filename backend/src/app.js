@@ -21,7 +21,7 @@ const allowedOrigins = [
   "http://localhost:3000/dashboard",
   "https://www.aamathakalirestro.com.np/",
   "https://www.aamathakalirestro.com.np/dashboard",
-  "https://meraki-cafe-restaurant-and-bar-dun.vercel.app"
+  "https://aama-thakali-restro-and-bar-ehne.vercel.app/"
 ];
 
 // CORS configuration
