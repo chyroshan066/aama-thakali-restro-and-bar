@@ -47,7 +47,7 @@ export const EventHall = memo(() => {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await fetch("https://api.merakirestro.com/api/gallery");
+        const res = await fetch("https://api.aamathakalirestro.com.np/api/gallery");
         const json = await res.json();
         setGallery(json.data || json);
       } catch (error) {

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { clearAuth, getStoredToken } from "@/lib/clientApi";
 import Link from "next/link";
 
-const CLIENT_DASHBOARD_URL = "https://merakirestro.com";
+const CLIENT_DASHBOARD_URL = "https://aamathakalirestro.com.np";
 
 export function Login() {
   const router = useRouter();
@@ -40,7 +40,7 @@ export function Login() {
   function handleLogout() {
     clearAuth();
     setIsMenuOpen(false);
-    router.push("https://merakirestro.com/login");
+    router.push("https://aamathakalirestro.com.np/login");
   }
 
   return (

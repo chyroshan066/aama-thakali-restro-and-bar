@@ -1,4 +1,4 @@
-const DEFAULT_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://api.merakirestro.com/api";
+const DEFAULT_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://api.aamathakalirestro.com.np/api";
 
 export type ApiConfig = {
   baseUrl?: string;

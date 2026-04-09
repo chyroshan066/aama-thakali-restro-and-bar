@@ -11,7 +11,7 @@ interface User {
   role?: string; 
 }
 
-const ADMIN_DASHBOARD_URL = "https://merakirestro.com/dashboard"; 
+const ADMIN_DASHBOARD_URL = "https://aamathakalirestro.com.np/dashboard"; 
 export default function Login() {
   const router = useRouter();
   const menuRef = useRef<HTMLDivElement>(null);

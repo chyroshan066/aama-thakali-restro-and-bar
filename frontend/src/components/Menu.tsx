@@ -117,7 +117,7 @@ const MenuCard = memo(
 
       try {
         const response = await fetch(
-          "https://api.merakirestro.com/api/orders",
+          "https://api.aamathakalirestro.com.np/api/orders",
           {
             method: "POST",
             headers: {
@@ -308,7 +308,7 @@ export const Menu = memo(() => {
     try {
       setLoading(true);
       const res = await fetch(
-        `https://api.merakirestro.com/api/menu?page=1&limit=500`
+        `https://api.aamathakalirestro.com.np/api/menu?page=1&limit=500`
       );
       const json = await res.json();
       const items = json.data || [];

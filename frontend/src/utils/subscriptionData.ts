@@ -14,7 +14,7 @@ export const onSubscriptionSubmit = async (data: SubscriptionFormData) => {
     // Ensure we use the base URL from your environment variables
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
     
-    const response = await fetch(`https://api.merakirestro.com/api/subscribe`, {
+    const response = await fetch(`https://api.aamathakalirestro.com.np/api/subscribe`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

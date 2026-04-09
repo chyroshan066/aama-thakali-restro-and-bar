@@ -136,7 +136,7 @@ export const Reservation = memo(() => {
         };
 
         const response = await fetch(
-          "https://api.merakirestro.com/api/reservations",
+          "https://api.aamathakalirestro.com.np/api/reservations",
           {
             method: "POST",
             headers: {
