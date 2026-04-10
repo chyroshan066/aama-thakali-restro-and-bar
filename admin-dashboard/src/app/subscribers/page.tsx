@@ -27,13 +27,13 @@ export default function SubscribersPage() {
     try {
       const token = getStoredToken();
       const res = await fetch(`${API_BASE_URL}/subscribers`, {
-        headers: { 
-          Authorization: `Bearer ${token}` 
+        headers: {
+          Authorization: `Bearer ${token}`
         }
       });
-      
+
       if (!res.ok) throw new Error("Could not sync with the registry.");
-      
+
       const data = await res.json();
       setState({ status: "success", subscribers: data.data || [] });
     } catch (err) {
@@ -49,7 +49,7 @@ export default function SubscribersPage() {
   // Instant filtering logic
   const filteredSubscribers = useMemo(() => {
     if (state.status !== "success") return [];
-    return state.status === "success" 
+    return state.status === "success"
       ? state.subscribers.filter(s => s.email.toLowerCase().includes(searchQuery.toLowerCase()))
       : [];
   }, [state, searchQuery]);
@@ -59,7 +59,7 @@ export default function SubscribersPage() {
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
         <Topbar />
-        
+
         <div className="p-6 lg:p-10">
           {/* Branded Header */}
           <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
@@ -86,8 +86,8 @@ export default function SubscribersPage() {
 
           {state.status === "loading" && (
             <div className="flex h-96 flex-col items-center justify-center space-y-4">
-               <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
-               <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Synchronizing Registry...</p>
+              <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Synchronizing Registry...</p>
             </div>
           )}
 
@@ -119,10 +119,10 @@ export default function SubscribersPage() {
                           <p className="text-[9px] text-gray-600 uppercase tracking-widest mt-1">Confirmed Subscriber</p>
                         </td>
                         <td className="px-6 py-5 text-right font-mono text-[11px] text-gray-500">
-                          {new Date(s.subscribed_at).toLocaleDateString('en-GB', { 
-                            day: '2-digit', 
-                            month: 'short', 
-                            year: 'numeric' 
+                          {new Date(s.subscribed_at).toLocaleDateString('en-GB', {
+                            day: '2-digit',
+                            month: 'short',
+                            year: 'numeric'
                           })}
                         </td>
                       </tr>
@@ -138,9 +138,9 @@ export default function SubscribersPage() {
               </table>
             </div>
           )}
-          
+
           <footer className="mt-24 text-center">
-              <p className="text-[9px] uppercase tracking-[0.6em] text-gray-800">Precision • Connectivity • Meraki Restro</p>
+            <p className="text-[9px] uppercase tracking-[0.6em] text-gray-800">Precision • Connectivity • Aama Thakali</p>
           </footer>
         </div>
       </main>

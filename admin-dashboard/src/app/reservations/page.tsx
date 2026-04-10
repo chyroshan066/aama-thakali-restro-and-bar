@@ -9,14 +9,14 @@ import {
   getStoredToken
 } from "@/lib/clientApi";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 type ReservationsState =
   | { status: "idle" | "loading" }
   | { status: "error"; message: string }
   | { status: "success"; reservations: Reservation[] };
 
-// Helper for dynamic status coloring - Meraki Restro Gold Palette
+// Helper for dynamic status coloring - Aama Thakali Gold Palette
 const getStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
     case 'approved': return 'text-[#791B1B] border-[#791B1B]/30 bg-[#791B1B]/5';
@@ -47,13 +47,13 @@ export default function ReservationsPage() {
   async function updateStatus(id: number, status: Reservation["status"]) {
     const token = getStoredToken();
     if (!token) { alert("Admin session required."); return; }
-    
+
     try {
       const res = await fetch(`${API_BASE_URL}/reservations/${id}/status`, {
         method: "PATCH",
-        headers: { 
-            "Content-Type": "application/json", 
-            Authorization: `Bearer ${token}` 
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
         },
         body: JSON.stringify({ status })
       });
@@ -69,7 +69,7 @@ export default function ReservationsPage() {
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
         <Topbar />
-        
+
         <div className="p-6 lg:p-10">
           {/* Branded Header */}
           <div className="mb-12">
@@ -82,8 +82,8 @@ export default function ReservationsPage() {
 
           {state.status === "loading" && (
             <div className="flex h-96 flex-col items-center justify-center space-y-4">
-               <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
-               <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Syncing Table Schedule...</p>
+              <div className="h-10 w-10 animate-spin border-[1px] border-[#791B1B] border-t-transparent rounded-full"></div>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Syncing Table Schedule...</p>
             </div>
           )}
 
@@ -118,7 +118,7 @@ export default function ReservationsPage() {
                           {/* <p className="text-[9px] text-gray-600 uppercase tracking-widest mt-1">Authorized Booking</p> */}
                         </td>
                         <td className="px-6 py-5">
-                          
+
                           <p className="text-sm font-medium text-white group-hover:text-[#791B1B] transition-colors">{r.phone_no}</p>
                         </td>
                         <td className="px-6 py-5">
@@ -138,14 +138,14 @@ export default function ReservationsPage() {
                         </td>
                         <td className="px-6 py-5">
                           <div className="flex justify-end gap-3 opacity-40 group-hover:opacity-100 transition-all duration-500 translate-x-2 group-hover:translate-x-0">
-                            <button 
-                              onClick={() => updateStatus(r.id, "approved")} 
+                            <button
+                              onClick={() => updateStatus(r.id, "approved")}
                               className="px-4 py-1.5 text-[9px] uppercase tracking-widest border border-[#791B1B]/40 text-[#791B1B] hover:bg-[#791B1B] hover:text-black transition-all"
                             >
                               Confirm
                             </button>
-                            <button 
-                              onClick={() => updateStatus(r.id, "rejected")} 
+                            <button
+                              onClick={() => updateStatus(r.id, "rejected")}
                               className="px-4 py-1.5 text-[9px] uppercase tracking-widest border border-zinc-800 text-zinc-600 hover:border-rose-900 hover:text-rose-500 transition-all"
                             >
                               Decline
@@ -165,9 +165,9 @@ export default function ReservationsPage() {
               </table>
             </div>
           )}
-          
+
           <footer className="mt-24 text-center">
-              <p className="text-[9px] uppercase tracking-[0.6em] text-gray-800">Hospitality • Precision • Meraki Restro Kathmandu</p>
+            <p className="text-[9px] uppercase tracking-[0.6em] text-gray-800">Hospitality • Precision • Aama Thakali Kathmandu</p>
           </footer>
         </div>
       </main>

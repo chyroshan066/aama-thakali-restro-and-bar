@@ -18,7 +18,7 @@ export default function MenuPage() {
   const [state, setState] = useState<MenuState>({ status: "loading" });
   const [page, setPage] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false); // New: Tracks form submission
-  
+
   const [form, setForm] = useState({
     id: null as number | null,
     name: "",
@@ -35,15 +35,15 @@ export default function MenuPage() {
 
   async function loadMenu(pageNumber = 1, append = false) {
     if (pageNumber === 1 && !append) setState({ status: "loading" });
-    
+
     try {
       const res = await fetch(`${API_BASE_URL}/menu?page=${pageNumber}&limit=10`);
       const data = await res.json();
-      
+
       if (!Array.isArray(data.data)) throw new Error("Unexpected response");
 
       const newItems = data.data;
-      const hasMore = newItems.length === 10; 
+      const hasMore = newItems.length === 10;
 
       setState((prev) => {
         const currentItems = append && prev.status === "success" ? prev.items : [];
@@ -100,9 +100,9 @@ export default function MenuPage() {
         body: formData,
       });
       if (!res.ok) throw new Error("Save failed");
-      
+
       resetForm();
-      await loadMenu(1, false); 
+      await loadMenu(1, false);
     } catch (err) {
       alert("Error saving item.");
     } finally {
@@ -143,47 +143,47 @@ export default function MenuPage() {
               {form.id ? "Refine Selection" : "Register New Dish"}
             </h2>
             <form onSubmit={handleSubmit} className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
-                <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Item Name</label>
-                  <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="e.g. Signature Truffle Ramen" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Category</label>
-                  <input required value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="e.g. Small Plates" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Price (NPR)</label>
-                  <input type="number" step="1" required value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="00.00" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Display Image</label>
-                  <input type="file" accept="image/*" onChange={(e) => setImageFile(e.target.files?.[0] ?? null)} className="w-full text-[10px] text-gray-500 file:mr-4 file:border file:border-[#791B1B]/30 file:bg-transparent file:px-4 file:py-1.5 file:text-[9px] file:uppercase file:text-[#791B1B] cursor-pointer" />
-                </div>
-                <div className="sm:col-span-2 lg:col-span-3 space-y-2">
-                  <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Composition</label>
-                  <input required value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="Describe the flavor profile..." />
-                </div>
-                
-                <div className="flex items-end gap-3">
-                   <button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className={`flex-1 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-2 
+              <div className="space-y-2">
+                <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Item Name</label>
+                <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="e.g. Signature Truffle Ramen" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Category</label>
+                <input required value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="e.g. Small Plates" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Price (NPR)</label>
+                <input type="number" step="1" required value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="00.00" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Display Image</label>
+                <input type="file" accept="image/*" onChange={(e) => setImageFile(e.target.files?.[0] ?? null)} className="w-full text-[10px] text-gray-500 file:mr-4 file:border file:border-[#791B1B]/30 file:bg-transparent file:px-4 file:py-1.5 file:text-[9px] file:uppercase file:text-[#791B1B] cursor-pointer" />
+              </div>
+              <div className="sm:col-span-2 lg:col-span-3 space-y-2">
+                <label className="text-[9px] uppercase tracking-[0.2em] text-[#791B1B] font-bold">Composition</label>
+                <input required value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="w-full border-b border-white/10 bg-transparent py-2.5 text-sm text-white outline-none focus:border-[#791B1B] transition-all" placeholder="Describe the flavor profile..." />
+              </div>
+
+              <div className="flex items-end gap-3">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`flex-1 py-3.5 text-[10px] font-bold uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-2 
                       ${isSubmitting ? "bg-[#791B1B]/50 cursor-not-allowed text-black/50" : "bg-[#791B1B] text-black hover:bg-[#d4b580]"}`}
-                   >
-                     {isSubmitting ? (
-                       <>
-                         <div className="h-3 w-3 animate-spin border-2 border-black/20 border-t-black rounded-full"></div>
-                         Processing
-                       </>
-                     ) : (
-                       form.id ? "Sync Changes" : "Confirm Entry"
-                     )}
-                   </button>
-                   {form.id && !isSubmitting && (
-                     <button type="button" onClick={resetForm} className="bg-white/5 px-5 py-3.5 text-[11px] text-gray-400 border border-white/10 hover:bg-white/10 transition-all">✕</button>
-                   )}
-                </div>
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="h-3 w-3 animate-spin border-2 border-black/20 border-t-black rounded-full"></div>
+                      Processing
+                    </>
+                  ) : (
+                    form.id ? "Sync Changes" : "Confirm Entry"
+                  )}
+                </button>
+                {form.id && !isSubmitting && (
+                  <button type="button" onClick={resetForm} className="bg-white/5 px-5 py-3.5 text-[11px] text-gray-400 border border-white/10 hover:bg-white/10 transition-all">✕</button>
+                )}
+              </div>
             </form>
           </section>
 
@@ -194,7 +194,7 @@ export default function MenuPage() {
                 <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Accessing Registry</p>
               </div>
             )}
-            
+
             {state.status === "success" && (
               <>
                 <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -219,18 +219,18 @@ export default function MenuPage() {
                 </div>
 
                 {state.hasMore && (
-                   <div className="mt-16 text-center">
-                     <button onClick={handleLoadMore} className="border border-[#791B1B] px-8 py-3 text-[10px] uppercase tracking-[0.3em] text-[#791B1B] hover:bg-[#791B1B] hover:text-black transition-all">
-                       Load More Items
-                     </button>
-                   </div>
+                  <div className="mt-16 text-center">
+                    <button onClick={handleLoadMore} className="border border-[#791B1B] px-8 py-3 text-[10px] uppercase tracking-[0.3em] text-[#791B1B] hover:bg-[#791B1B] hover:text-black transition-all">
+                      Load More Items
+                    </button>
+                  </div>
                 )}
               </>
             )}
           </section>
 
           <footer className="mt-24 border-t border-white/[0.05] pt-12 text-center">
-            <p className="text-[9px] uppercase tracking-[0.6em] text-gray-700">Meraki Restro Culinary Registry • Kathmandu</p>
+            <p className="text-[9px] uppercase tracking-[0.6em] text-gray-700">Aama Thakali Culinary Registry • Kathmandu</p>
           </footer>
         </div>
       </main>

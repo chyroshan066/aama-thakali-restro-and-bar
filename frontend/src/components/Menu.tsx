@@ -40,7 +40,7 @@ const AuthModal = ({
         </h2>
         <p className="text-gray-400 text-xl mb-8 leading-relaxed tracking-wide">
           To finalize your order and explore our curated flavors, please sign in
-          to your Meraki Restro account.
+          to your Aama Thakali account.
         </p>
         <div className="space-y-3">
           <Link

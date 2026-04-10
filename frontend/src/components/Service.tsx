@@ -69,7 +69,7 @@ export const Service = memo(() => (
             <p className="section-subtitle label-2">Flavors For Royalty</p>
             <h2 className="headline-1 section-title">We Offer Top Notch</h2>
             <p className="section-text">
-                From hearty turkish dishes to handcrafted sides and drinks, Meraki Restro, Restro & Bar serves bold flavors, fresh ingredients, and unforgettable taste - every single time.
+                From hearty turkish dishes to handcrafted sides and drinks, Aama Thakali, Restro & Bar serves bold flavors, fresh ingredients, and unforgettable taste - every single time.
             </p>
             <ul className="grid-list">
 

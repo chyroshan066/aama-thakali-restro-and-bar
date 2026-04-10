@@ -22,10 +22,10 @@ export default function LoginPage() {
     setLoading(true);
 
     const endpoint = isRegister ? '/auth/register' : '/auth/login';
-    
+
     // 2. Included phoneNo in the registration payload
-    const payload = isRegister 
-      ? { name, email, password, phone_no: phoneNo } 
+    const payload = isRegister
+      ? { name, email, password, phone_no: phoneNo }
       : { email, password };
 
     try {
@@ -43,7 +43,7 @@ export default function LoginPage() {
 
       storeAuth(data.token, data.user);
       router.push('/');
-      router.refresh(); 
+      router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Action failed');
     } finally {
@@ -55,9 +55,9 @@ export default function LoginPage() {
     <div className="relative flex min-h-screen items-center justify-center bg-[#0a0a0a] p-6 selection:bg-[#791B1B]/30 overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a] to-[#0a0a0a]" />
-        <img 
-          src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop" 
-          alt="Restaurant Background" 
+        <img
+          src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop"
+          alt="Restaurant Background"
           className="w-full h-full object-cover"
         />
       </div>
@@ -67,13 +67,13 @@ export default function LoginPage() {
           <h2 className="text-[12px] uppercase tracking-[0.5em] contact-number font-bold mb-3">
             {isRegister ? 'Join Us' : 'Welcome Back'}
           </h2>
-          <h1 className="text-6xl font-serif italic text-white tracking-tight">Meraki Restro</h1>
+          <h1 className="text-6xl font-serif italic text-white tracking-tight">Aama Thakali</h1>
           <div className="w-12 h-[1px] bg-[#791B1B] mx-auto mt-6 opacity-40"></div>
         </div>
 
         <div className="border border-white/10 bg-white/[0.02] p-8 md:p-10 backdrop-blur-xl shadow-2xl rounded-sm">
           <form className="space-y-6" onSubmit={handleSubmit}>
-            
+
             {isRegister && (
               <>
                 <div className="space-y-2 animate-in slide-in-from-top-2 duration-500">
@@ -170,7 +170,7 @@ export default function LoginPage() {
 
         <div className="mt-12 text-center">
           <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600">
-            &copy; 2026 Meraki Restro Restaurant Group
+            &copy; 2026 Aama Thakali Restaurant Group
           </p>
         </div>
       </div>

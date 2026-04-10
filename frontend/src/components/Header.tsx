@@ -112,7 +112,7 @@ export const Header = memo(() => {
               src="/images/logo.webp"
               width={70}
               height={50}
-              alt="Meraki Restro - Home"
+              alt="Aama Thakali - Home"
             />
           </a>
 
@@ -131,7 +131,7 @@ export const Header = memo(() => {
                 src="/images/logo.webp"
                 width="90"
                 height="50"
-                alt="Meraki Restro - Home"
+                alt="Aama Thakali - Home"
               />
             </a>
 

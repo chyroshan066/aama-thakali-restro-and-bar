@@ -260,7 +260,7 @@ export default function OrdersPage() {
 
           <footer className="mt-16 text-center">
             <p className="text-[9px] uppercase tracking-[0.4em] text-gray-800">
-              Live Data Feed • Meraki Restro Kathmandu
+              Live Data Feed • Aama Thakali Kathmandu
             </p>
           </footer>
         </div>

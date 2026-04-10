@@ -38,7 +38,7 @@ export default function LoginPage() {
 
       storeAuth(data.token, data.user);
       router.push('/');
-      router.refresh(); 
+      router.refresh();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Action failed');
     } finally {
@@ -61,13 +61,13 @@ export default function LoginPage() {
           <h2 className="text-[10px] uppercase tracking-[0.6em] text-[#791B1B] font-semibold mb-4 animate-pulse">
             {isRegister ? 'Credential Registry' : 'Identity Verification'}
           </h2>
-          <h1 className="text-5xl font-serif italic text-white tracking-tighter mb-2">Meraki Restro</h1>
+          <h1 className="text-5xl font-serif italic text-white tracking-tighter mb-2">Aama Thakali</h1>
           <div className="flex items-center justify-center gap-4 mt-4">
-             <div className="h-[1px] w-8 bg-[#791B1B]/30"></div>
-             <p className="text-[11px] uppercase tracking-[0.3em] text-gray-500 font-medium whitespace-nowrap">
-               Admin Portal
-             </p>
-             <div className="h-[1px] w-8 bg-[#791B1B]/30"></div>
+            <div className="h-[1px] w-8 bg-[#791B1B]/30"></div>
+            <p className="text-[11px] uppercase tracking-[0.3em] text-gray-500 font-medium whitespace-nowrap">
+              Admin Portal
+            </p>
+            <div className="h-[1px] w-8 bg-[#791B1B]/30"></div>
           </div>
         </div>
 
@@ -78,7 +78,7 @@ export default function LoginPage() {
           <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-[#791B1B]/40 transition-all group-hover:scale-110"></div>
 
           <form className="space-y-8" onSubmit={handleSubmit}>
-            
+
             {isRegister && (
               <div className="space-y-2 animate-in slide-in-from-top-2 duration-500">
                 <label className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-500 ml-1">
@@ -158,7 +158,7 @@ export default function LoginPage() {
 
         <div className="mt-12 text-center opacity-40">
           <p className="text-[9px] uppercase tracking-[0.5em] text-gray-600">
-             &copy; 2026 Meraki Restro • Restricted Access
+            &copy; 2026 Aama Thakali • Restricted Access
           </p>
         </div>
       </div>

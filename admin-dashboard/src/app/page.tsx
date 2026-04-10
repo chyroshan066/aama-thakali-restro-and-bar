@@ -6,18 +6,18 @@ import { Topbar } from "@/components/Topbar";
 import { fetchAdminOrdersClient } from "@/lib/clientApi";
 import type { Order } from "@/lib/api";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 type DashboardState =
   | { status: "idle" | "loading" }
   | { status: "error"; message: string }
   | {
-      status: "success";
-      orders: Order[];
-      totalOrders: number;
-      totalRevenue: number;
-      menuCount: number;
-    };
+    status: "success";
+    orders: Order[];
+    totalOrders: number;
+    totalRevenue: number;
+    menuCount: number;
+  };
 
 export default function HomePage() {
   const [state, setState] = useState<DashboardState>({ status: "loading" });
@@ -73,14 +73,14 @@ export default function HomePage() {
     <div className="flex min-h-screen bg-[#080808] text-gray-100 selection:bg-[#791B1B] selection:text-black">
       {/* Background Texture Overlay */}
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]"></div>
-      
+
       <Sidebar />
 
       <main className="flex-1 overflow-hidden relative z-10">
         <Topbar />
 
         <div className="h-[calc(100vh-64px)] overflow-y-auto p-6 md:p-10 custom-scrollbar">
-          
+
           {/* Header Section */}
           <div className="mb-12 flex justify-between items-end">
             <div>
@@ -91,11 +91,11 @@ export default function HomePage() {
               <div className="mt-4 h-[1px] w-24 bg-gradient-to-r from-[#791B1B] to-transparent"></div>
             </div>
             <div className="text-right hidden md:block">
-               <p className="text-[10px] text-gray-500 uppercase tracking-widest">System Status</p>
-               <div className="flex items-center gap-2 justify-end mt-1">
-                  <span className={`h-1.5 w-1.5 rounded-full animate-pulse ${state.status === 'error' ? 'bg-red-500' : 'bg-[#791B1B]'}`}></span>
-                  <p className="text-xs italic text-gray-300">{state.status === 'error' ? 'Interrupted' : 'Operational'}</p>
-               </div>
+              <p className="text-[10px] text-gray-500 uppercase tracking-widest">System Status</p>
+              <div className="flex items-center gap-2 justify-end mt-1">
+                <span className={`h-1.5 w-1.5 rounded-full animate-pulse ${state.status === 'error' ? 'bg-red-500' : 'bg-[#791B1B]'}`}></span>
+                <p className="text-xs italic text-gray-300">{state.status === 'error' ? 'Interrupted' : 'Operational'}</p>
+              </div>
             </div>
           </div>
 
@@ -113,11 +113,11 @@ export default function HomePage() {
                   {stat.value}
                 </p>
                 <p className="mt-2 text-[10px] text-gray-600 tracking-[0.1em] uppercase italic opacity-0 group-hover:opacity-100 transition-opacity duration-500">{stat.desc}</p>
-                
+
                 {/* Subtle Gold Corner Accent */}
                 <div className="absolute top-0 right-0 w-8 h-8 opacity-20 group-hover:opacity-100 transition-opacity">
-                   <div className="absolute top-0 right-0 w-[1px] h-full bg-[#791B1B]"></div>
-                   <div className="absolute top-0 right-0 h-[1px] w-full bg-[#791B1B]"></div>
+                  <div className="absolute top-0 right-0 w-[1px] h-full bg-[#791B1B]"></div>
+                  <div className="absolute top-0 right-0 h-[1px] w-full bg-[#791B1B]"></div>
                 </div>
               </article>
             ))}
@@ -177,7 +177,7 @@ export default function HomePage() {
           </section>
 
           <footer className="mt-20 border-t border-white/[0.05] py-10 text-center">
-              <p className="text-[10px] uppercase tracking-[0.6em] text-gray-700">Meraki Restro Restaurant & Bar • Kathmandu</p>
+            <p className="text-[10px] uppercase tracking-[0.6em] text-gray-700">Aama Thakali Restaurant & Bar • Kathmandu</p>
           </footer>
         </div>
       </main>

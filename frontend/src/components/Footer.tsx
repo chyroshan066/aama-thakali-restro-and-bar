@@ -145,7 +145,7 @@ export const Footer = memo(() => {
                   width={90}
                   height={50}
                   loading="lazy"
-                  alt="Meraki Restro Home"
+                  alt="Aama Thakali Home"
                 />
               </a>
 
