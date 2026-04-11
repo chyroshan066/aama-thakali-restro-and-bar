@@ -14,7 +14,7 @@ import { Features } from '@/components/Features';
 // import { Event } from '@/components/Event';
 import { Footer } from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
-import { EventHall } from '@/components/EventHall';
+// import { EventHall } from '@/components/EventHall';
 import { Testimonial } from '@/components/Testimonial';
 
 export default function Home() {
@@ -50,7 +50,7 @@ export default function Home() {
               <About />
               {/* <SpecialDish /> */}
               <Menu />
-              <EventHall />
+              {/* <EventHall /> */}
               <Testimonial />
               <Reservation />
               <Features />
